@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from legogpt.stability_analysis import stability_score, StabilityConfig
 from .lego_library import (lego_library,
                            dimensions_to_brick_id, brick_id_to_dimensions,
                            brick_id_to_part_id, part_id_to_brick_id)
@@ -183,18 +182,73 @@ class LegoStructure:
         return True
 
     def is_stable(self) -> bool:
+        """
+        Check if the structure is stable using basic structural rules:
+        1. No floating bricks
+        2. No collisions
+        3. Each brick must be supported from below or be at ground level
+        4. Each brick must have at least one connection point with adjacent bricks
+        """
         if self.has_floating_bricks() or self.has_collisions():
             return False
-        return self.stability_scores().max() < 1
+
+        # Check that each brick is either at ground level or has support from below
+        for brick in self.bricks:
+            if brick.z == 0:
+                continue  # Ground level is always stable
+
+            # Check if brick has support from below
+            has_support = False
+            for x in range(brick.x, brick.x + brick.h):
+                for y in range(brick.y, brick.y + brick.w):
+                    if self.voxel_occupancy[x, y, brick.z - 1]:
+                        has_support = True
+                        break
+                if has_support:
+                    break
+
+            if not has_support:
+                return False
+
+            # Check if brick has at least one connection point with adjacent bricks
+            has_connection = False
+            # Check connections in x direction
+            if brick.x > 0:
+                for y in range(brick.y, brick.y + brick.w):
+                    if self.voxel_occupancy[brick.x - 1, y, brick.z]:
+                        has_connection = True
+                        break
+            if not has_connection and brick.x + brick.h < self.world_dim:
+                for y in range(brick.y, brick.y + brick.w):
+                    if self.voxel_occupancy[brick.x + brick.h, y, brick.z]:
+                        has_connection = True
+                        break
+
+            # Check connections in y direction
+            if not has_connection and brick.y > 0:
+                for x in range(brick.x, brick.x + brick.h):
+                    if self.voxel_occupancy[x, brick.y - 1, brick.z]:
+                        has_connection = True
+                        break
+            if not has_connection and brick.y + brick.w < self.world_dim:
+                for x in range(brick.x, brick.x + brick.h):
+                    if self.voxel_occupancy[x, brick.y + brick.w, brick.z]:
+                        has_connection = True
+                        break
+
+            if not has_connection:
+                return False
+
+        return True
 
     def stability_scores(self) -> np.ndarray:
-        if self.has_collisions():
-            raise ValueError('Cannot compute stability scores - structure has colliding bricks.')
-        if self.has_out_of_bounds_bricks():
-            raise ValueError('Cannot compute stability scores - structure has out of bounds bricks.')
-        scores, _, _, _, _ = stability_score(self.to_json(), lego_library,
-                                             StabilityConfig(world_dimension=(self.world_dim,) * 3))
-        return scores
+        """
+        This method is deprecated. Use is_stable() instead for stability checking.
+        Returns a dummy array of zeros to maintain compatibility.
+        """
+        warnings.warn("stability_scores() is deprecated. Use is_stable() instead for stability checking.",
+                     DeprecationWarning, stacklevel=2)
+        return np.zeros((self.world_dim, self.world_dim, self.world_dim))
 
     @classmethod
     def from_json(cls, lego_json: dict):

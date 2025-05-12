@@ -28,7 +28,7 @@ class LegoGPTConfig:
                           'Bricks outside this box are considered out of bounds.'},
     )
     max_bricks: int = field(
-        default=2000,
+        default=100,
         kw_only=True,
         metadata={'help': 'The maximum number of bricks per generated LEGO structure.'},
     )
@@ -118,6 +118,8 @@ class LegoGPT:
 
         # Generate LEGO structure. If it is unstable, remove all bricks after the first unstable brick and regenerate.
         for regeneration_num in range(self.max_regenerations + 1):
+            if regeneration_num > 0:
+                print(f"\nRegeneration attempt {regeneration_num}/{self.max_regenerations}")
             lego, rejection_reasons_lego = self._generate_structure(caption, starting_lego=starting_lego)
             rejection_reasons.update(rejection_reasons_lego)
             if lego.is_stable():
@@ -161,15 +163,23 @@ class LegoGPT:
 
         # Generate bricks with rejection sampling
         rejection_reasons = Counter()
+        total_rejections = 0
         for brick_num in range(self.max_bricks):
+            # Print progress
+            progress = (brick_num / self.max_bricks) * 100
+            print(f"\rGenerating brick {brick_num + 1}/{self.max_bricks} ({progress:.1f}%) - Total rejections: {total_rejections}", end="")
+
             brick, rejection_reasons_brick = self.generate_brick_with_rejection_sampling(
                 prompt if brick_num == 0 else None, lego=starting_lego
             )
             if not brick:  # EOS token was generated
+                print()  # New line after progress
                 break
             rejection_reasons.update(rejection_reasons_brick)
+            total_rejections += sum(rejection_reasons_brick.values())
             starting_lego.add_brick(LegoBrick.from_txt(brick))
 
+        print()  # New line after progress
         return starting_lego, rejection_reasons
 
     def generate_brick_with_rejection_sampling(

@@ -13,3 +13,6 @@ wheels/
 wandb
 *.un~
 .DS_Store
+
+# default outputs
+output.*

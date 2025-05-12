@@ -39,10 +39,11 @@ def render_lego(
     with stdout_redirected(os.devnull):
         bpy.data.scenes[0].render.engine = 'CYCLES'
 
-        # Set the device_type
-        bpy.context.preferences.addons[
-            'cycles'
-        ].preferences.compute_device_type = 'CUDA'
+        # Set the device_type based on platform
+        if sys.platform == 'darwin':  # macOS
+            bpy.context.preferences.addons['cycles'].preferences.compute_device_type = 'METAL'
+        else:  # Linux/Windows
+            bpy.context.preferences.addons['cycles'].preferences.compute_device_type = 'CUDA'
 
         # Set the device and feature set
         bpy.context.scene.cycles.device = 'GPU'
@@ -53,8 +54,12 @@ def render_lego(
         print(bpy.context.preferences.addons['cycles'].preferences.compute_device_type)
         for d in bpy.context.preferences.addons['cycles'].preferences.devices:
             d['use'] = 0
-            if d['name'][:6] == 'NVIDIA':
-                d['use'] = 1
+            if sys.platform == 'darwin':  # macOS
+                if d['name'].startswith('Apple'):  # Apple GPU
+                    d['use'] = 1
+            else:  # Linux/Windows
+                if d['name'].startswith('NVIDIA'):  # NVIDIA GPU
+                    d['use'] = 1
             print(d['name'], d['use'])
 
     # Remove all objects but keep the camera
