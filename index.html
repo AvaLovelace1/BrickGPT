@@ -29,65 +29,60 @@
 </head>
 
 <body>
-    <div class="highlight-clean" style="padding-bottom: 20px;">
-        <div class="container" style="padding-bottom: 10px; max-width: 1000px;">
-            <h1 class="text-center"><b>Generating Physically Stable and Buildable Brick Structures from Text</b></h1>
-        </div>
-        <div class="container" style="max-width: 800px;">
-            <div class="authors text-center" style="padding-bottom: 25px; padding-left: 20px; padding-right: 20px;">
-                <h5 class="text-center">
-                    <a class="text-center" href="https://avapun.com/">Ava&nbsp;Pun</a>* &nbsp;&nbsp;
-                    <a class="text-center" href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>* &nbsp;&nbsp;
-                    <a class="text-center" href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>* &nbsp;&nbsp;
-                    <a class="text-center" href="https://www.cs.cmu.edu/~deva/">Deva&nbsp;Ramanan</a> &nbsp;&nbsp;
-                    <a class="text-center" href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a>
-                    &nbsp;&nbsp;
-                    <a class="text-center" href="https://www.cs.cmu.edu/~junyanz/">Jun&#8209;Yan&nbsp;Zhu</a>
-                </h5>
+    <div class="container d-flex flex-column align-items-center mt-5 mb-5">
+        <hgroup class="max-w-md text-center mb-4">
+            <h1 class="display-5 mb-3">
+                Generating Physically Stable and Buildable Brick Structures from Text
+            </h1>
+            <div class="mb-3">
+                <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 fs-5 mb-1">
+                    <li><a href="https://avapun.com/">Ava&nbsp;Pun</a>*</li>
+                    <li><a href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>*</li>
+                    <li><a href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>*</li>
+                    <li><a href="https://www.cs.cmu.edu/~deva/">Deva&nbsp;Ramanan</a></li>
+                    <li><a href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a></li>
+                    <li><a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan&nbsp;Zhu</a></li>
+                </ul>
+                <div class="fs-4">Carnegie Mellon University</div>
             </div>
-            <div class="authors institute">
-                <h4 class="text-center">Carnegie Mellon University</h4>
-            </div>
-            <div class="text-center">
-                <span style="font-size:12px">* denotes equal contribution</span>
-            </div>
-        </div>
+            <p><small>* denotes equal contribution</small></p>
+        </hgroup>
 
-        <div class="buttons" style="margin-bottom: 8px;">
-            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2505.05469">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
-                    </path>
-                </svg>arXiv
-            </a>
-            <a class="btn btn-light" role="button" href="https://github.com/AvaLovelace1/BrickGPT/">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px"
-                    viewBox="0 0 475 531">
-                    <path fill="currentColor"
-                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                    </path>
-                </svg>
-                Code
-            </a>
-            <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px"
-                    viewBox="0 0 640 512">
-                    <path
-                        d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z" />
-                </svg>
-                Demo
-            </a>
-        </div>
-    </div>
-
-    <div class="container" style="max-width: 1400px;">
-        <center>
-            <noscript>
-                <p class="text-danger small">Enable JavaScript to play videos.</p>
-            </noscript>
-            <video controls loop muted src="assets/brickgpt-v2.mp4" style="width: 60%"></video>
-        </center>
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 row-gap-2">
+            <li>
+                <a class="btn btn-light" href="https://arxiv.org/abs/2505.05469">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+                        </path>
+                    </svg>&nbsp;&nbsp;
+                    arXiv
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-light" href="https://github.com/AvaLovelace1/BrickGPT/">
+                    <svg width="24px" height="24px" viewBox="0 0 475 531">
+                        <path fill="currentColor"
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                        </path>
+                    </svg>&nbsp;&nbsp;
+                    Code
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-light" href="https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo">
+                    <svg width="24px" height="24px" viewBox="0 0 640 512">
+                        <path
+                            d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z" />
+                    </svg>&nbsp;&nbsp;
+                    Demo
+                </a>
+            </li>
+        </ul>
+        <noscript>
+            <p class="text-danger small">Enable JavaScript to play videos.</p>
+        </noscript>
+        <video controls loop muted src="assets/brickgpt-v2.mp4" class="w-100"></video>
     </div>
 
     <hr style="max-width: 1400px;">

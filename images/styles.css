@@ -1,3 +1,15 @@
+.max-w-sm {
+    max-width: 576px;
+}
+
+.max-w-md {
+    max-width: 768px;
+}
+
+.max-w-lg {
+    max-width: 992px;
+}
+
 .scroll-container {
     position: relative;
 }
