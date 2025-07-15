@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Metadata -->
     <title>Generating Physically Stable and Buildable Brick Structures from Text</title>
     <meta name="description"
         content="Official website for BrickGPT, the first approach for generating physically stable toy brick models from text prompts.">
@@ -17,26 +18,32 @@
     <meta property="og:image" content="assets/teaser.jpg">
     <meta property="og:video" content="assets/brickgpt-v2.mp4">
 
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="all_results/images/sofa.png">
     <link rel="apple-touch-icon" href="all_results/images/sofa.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="images/fonts.css" type="text/css">
-    <link rel="stylesheet" href="images/Highlight-Clean.css">
     <link rel="stylesheet" href="images/styles.css">
-    <link rel="manifest" href="images/site.webmanifest">
 </head>
 
 <body>
-    <div class="container mt-5 mb-5">
+    <div class="container my-4 my-md-5">
         <div class="row justify-content-center">
             <hgroup class="text-center mb-4 max-w-md">
-                <h1 class="display-5 mb-3">
+                <h1 class="display-5 mb-4">
                     Generating Physically Stable and Buildable Brick Structures from Text
                 </h1>
                 <div class="mb-3">
-                    <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 fs-5 mb-1">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-2 fs-5 mb-1">
                         <li><a href="https://avapun.com/">Ava&nbsp;Pun</a>*</li>
                         <li><a href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>*</li>
                         <li><a href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>*</li>
@@ -44,9 +51,9 @@
                         <li><a href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a></li>
                         <li><a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan&nbsp;Zhu</a></li>
                     </ul>
-                    <div class="fs-4">Carnegie Mellon University</div>
+                    <div class="fs-5">Carnegie Mellon University</div>
                 </div>
-                <p><small>* denotes equal contribution</small></p>
+                <p class="text-secondary"><small>* denotes equal contribution</small></p>
             </hgroup>
 
             <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 row-gap-2">
@@ -87,34 +94,34 @@
         </div>
     </div>
 
-    <div class="container">
-        <hr class="my-4" />
+    <div class="container my-4 my-md-5">
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Overview</h2>
-        <p id="overview" class="lead mb-4">
-            <b class="fw-bold">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
+        <p id="overview" class="lead max-w-sm mx-auto mb-5">
+            <b class="fw-bolder">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
             end-to-end manner. Notably, our generated brick structure is physically stable and buildable.
         </p>
         <img src="./assets/teaser.jpg" aria-labelledby="overview" class="w-100" />
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Abstract</h2>
         <p id="abstract" class="mb-4">
-            We introduce <b class="fw-bold">BrickGPT</b>, the first approach for generating
+            We introduce <b class="fw-bolder">BrickGPT</b>, the first approach for generating
             physically stable toy brick models from text prompts. To achieve this, we construct a
             large-scale, physically stable dataset of brick designs, along with their associated captions, and train
             an autoregressive large language model to predict the next brick to add via next-token prediction.
             To improve the stability of the resulting designs, we employ an efficient validity check and
             physics-aware rollback during autoregressive inference, which prunes infeasible token
             predictions using physics laws and assembly constraints. Our experiments show that
-            <b class="fw-bold">BrickGPT</b> produces stable, diverse, and aesthetically pleasing
+            <b class="fw-bolder">BrickGPT</b> produces stable, diverse, and aesthetically pleasing
             brick designs that align closely with the input text prompts. We also develop a text-based brick
             texturing method to generate colored and textured designs. We show that our designs can be
             assembled manually by humans and automatically by robotic arms. We also release our new dataset,
-            <b class="fw-bold">StableText2Brick</b>, containing over 47,000 brick structures of
+            <b class="fw-bolder">StableText2Brick</b>, containing over 47,000 brick structures of
             over 28,000 unique 3D objects accompanied by detailed captions, along with our code and models.
         </p>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">StableText2Brick Dataset</h2>
         <p id="dataset" class="mb-4">
             (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
@@ -123,16 +130,16 @@
             shape. (c) Stability analysis is performed on each variation to filter out physically unstable
             designs. (d) To obtain the corresponding captions for each shape, we render the brick design
             from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data
-            samples from 5 categories in our <b class="fw-bold">StableText2Brick</b> dataset.
+            samples from 5 categories in our <b class="fw-bolder">StableText2Brick</b> dataset.
         </p>
         <img src="./assets/dataset.jpg" aria-labelledby="dataset" class="w-100" />
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">BrickGPT Pipeline</h2>
         <p id="pipeline" class="mb-4">
             (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
             manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
-            descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <b class="fw-bold">BrickGPT</b>
+            descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <b class="fw-bolder">BrickGPT</b>
             generates brick designs incrementally by predicting
             one brick at a time given a text prompt. For each generated brick, we perform validity checks to
             ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks.
@@ -142,7 +149,7 @@
         </p>
         <img src="./assets/pipeline.jpg" aria-labelledby="pipeline" class="w-100" />
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Step by step generation of brick structures from text</h2>
         <div class="container-fluid">
             <div class="row align-items-start row-cols-2 row-cols-md-3 row-gap-2 text-center">
@@ -192,7 +199,7 @@
             </div>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Automated assembly of generated brick structures using robots (8x speed)</h2>
         <div class="container-fluid">
             <div class="row align-items-start row-cols-2 row-gap-2 text-center">
@@ -217,12 +224,12 @@
             </div>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated brick structures assembled by humans</h2>
         <img class="w-100" src="./assets/human_exec.jpg"
             alt="Examples of brick structures built in the real world by humans." />
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated textured brick models</h2>
         <div class="container-fluid">
             <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 text-center">
@@ -345,7 +352,7 @@
             </div>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated colored brick models</h2>
         <div class="container-fluid">
             <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 text-center">
@@ -392,7 +399,7 @@
             </div>
         </div>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="mb-4 fs-3">Citation</h2>
         <pre><code>@article{pun2025brickgpt,
     title   = {Generating Physically Stable and Buildable Brick Structures from Text},
@@ -401,7 +408,7 @@
     year    = {2025}
 }</code></pre>
 
-        <hr class="my-4" />
+        <hr class="my-4 my-md-5" />
         <h2 class="mb-4 fs-3">Acknowledgements</h2>
         <p>
             We thank Minchen Li, Ken Goldberg, Nupur Kumari, Ruihan Gao, and Yihao Shi for their discussions
