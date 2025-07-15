@@ -67,13 +67,14 @@
             <h1 class="text-center"><b>Generating Physically Stable and Buildable Brick Structures from Text</b></h1>
         </div>
         <div class="container" style="max-width: 800px;">
-            <div class="authors text-center" style="padding-bottom: 25px; padding-left: 20px; padding-right: 20px;" >
+            <div class="authors text-center" style="padding-bottom: 25px; padding-left: 20px; padding-right: 20px;">
                 <h5 class="text-center">
                     <a class="text-center" href="https://avapun.com/">Ava&nbsp;Pun</a>* &nbsp;&nbsp;
                     <a class="text-center" href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>* &nbsp;&nbsp;
                     <a class="text-center" href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>* &nbsp;&nbsp;
                     <a class="text-center" href="https://www.cs.cmu.edu/~deva/">Deva&nbsp;Ramanan</a> &nbsp;&nbsp;
-                    <a class="text-center" href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a> &nbsp;&nbsp;
+                    <a class="text-center" href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a>
+                    &nbsp;&nbsp;
                     <a class="text-center" href="https://www.cs.cmu.edu/~junyanz/">Jun&#8209;Yan&nbsp;Zhu</a>
                 </h5>
             </div>
@@ -105,18 +106,19 @@
             <a class="btn btn-light" role="button" href="https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px"
                     viewBox="0 0 640 512">
-                    <path d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z"/></svg>
+                    <path
+                        d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z" />
+                </svg>
                 Demo
             </a>
         </div>
-    </div>	
+    </div>
 
     <div class="container" style="max-width: 1400px;">
         <center>
-            <video controls="controls" loop="loop" muted="muted"
-                src="assets/brickgpt-v2.mp4"
-                style="width: 60%" type="video/mp4">
-            </video> 
+            <video controls="controls" loop="loop" muted="muted" src="assets/brickgpt-v2.mp4" style="width: 60%"
+                type="video/mp4">
+            </video>
         </center>
     </div>
 
@@ -125,16 +127,17 @@
     <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Overview</h2>
 
     <div class="container" style="max-width: 1400px;">
-        <p style="font-size:19px";> <span
-            style="font-weight:900">BrickGPT</span> generates a toy brick structure from a user-provided text prompt in an end-to-end manner. Notably, our generated brick structure is physically stable and buildable. </p>
+        <p style="font-size:19px" ;> <span style="font-weight:900">BrickGPT</span> generates a toy brick structure from
+            a user-provided text prompt in an end-to-end manner. Notably, our generated brick structure is physically
+            stable and buildable. </p>
 
 
         <img src="./assets/teaser.jpg" style="width: 100%;" />
         <!-- <video autoplay controls loop muted playsinline
                                     src="rsc/figures/teaser.mp4"
                                     style="width: 100%" type="video/mp4"></video> -->
-        
-            <!--  -->
+
+        <!--  -->
     </div>
 
     <hr style="max-width: 1400px;">
@@ -143,10 +146,19 @@
             <div class="col-md-12">
                 <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Abstract</h2>
                 <p>
-                    We introduce <span
-                    style="font-weight:900">BrickGPT</span>, the first approach for generating physically stable toy brick models from text prompts. To achieve this, we construct a large-scale, physically stable dataset of brick designs, along with their associated captions, and train an autoregressive large language model to predict the next brick to add via next-token prediction. To improve the stability of the resulting designs, we employ an efficient validity check and physics-aware rollback during autoregressive inference, which prunes infeasible token predictions using physics laws and assembly constraints. Our experiments show that <span
-                    style="font-weight:900">BrickGPT</span> produces stable, diverse, and aesthetically pleasing brick designs that align closely with the input text prompts. We also develop a text-based brick texturing method to generate colored and textured designs. We show that our designs can be assembled manually by humans and automatically by robotic arms. We also release our new dataset, <span
-                    style="font-weight:900">StableText2Brick</span>, containing over 47,000 brick structures of over 28,000 unique 3D objects accompanied by detailed captions, along with our code and models.
+                    We introduce <span style="font-weight:900">BrickGPT</span>, the first approach for generating
+                    physically stable toy brick models from text prompts. To achieve this, we construct a large-scale,
+                    physically stable dataset of brick designs, along with their associated captions, and train an
+                    autoregressive large language model to predict the next brick to add via next-token prediction. To
+                    improve the stability of the resulting designs, we employ an efficient validity check and
+                    physics-aware rollback during autoregressive inference, which prunes infeasible token predictions
+                    using physics laws and assembly constraints. Our experiments show that <span
+                        style="font-weight:900">BrickGPT</span> produces stable, diverse, and aesthetically pleasing
+                    brick designs that align closely with the input text prompts. We also develop a text-based brick
+                    texturing method to generate colored and textured designs. We show that our designs can be assembled
+                    manually by humans and automatically by robotic arms. We also release our new dataset, <span
+                        style="font-weight:900">StableText2Brick</span>, containing over 47,000 brick structures of over
+                    28,000 unique 3D objects accompanied by detailed captions, along with our code and models.
                 </p>
 
             </div>
@@ -159,7 +171,13 @@
             <div class="col-md-12">
                 <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">StableText2Brick Dataset</h2>
                 <p>
-                    (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20 \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each shape with multiple structural variations by randomizing the brick layout while preserving the overall shape. (c) Stability analysis is performed on each variation to filter out physically unstable designs. (d) To obtain the corresponding captions for each shape, we render the brick design from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data samples from 5 categories in our <span style="font-weight:900">StableText2Brick</span> dataset.
+                    (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
+                    \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each shape
+                    with multiple structural variations by randomizing the brick layout while preserving the overall
+                    shape. (c) Stability analysis is performed on each variation to filter out physically unstable
+                    designs. (d) To obtain the corresponding captions for each shape, we render the brick design from 24
+                    different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data samples
+                    from 5 categories in our <span style="font-weight:900">StableText2Brick</span> dataset.
                 </p>
                 <p></p>
                 <p></p>
@@ -177,7 +195,15 @@
             <div class="col-md-12">
                 <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">BrickGPT Pipeline</h2>
                 <p>
-                    (a) Our system tokenizes a brick design into a sequence of text tokens,  ordered in a raster-scan manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <span style="font-weight:900">BrickGPT</span> generates brick designs incrementally by predicting one brick at a time given a text prompt. For each generated brick, we perform validity checks to ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks. After completing the design, we verify its physical stability. If the structure is unstable, we roll back to the stable state by removing all the unstable bricks and their subsequent ones and resume generation from that point.
+                    (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
+                    manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
+                    descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <span
+                        style="font-weight:900">BrickGPT</span> generates brick designs incrementally by predicting one
+                    brick at a time given a text prompt. For each generated brick, we perform validity checks to ensure
+                    it is well-formatted, exists in our brick library, and does not collide with existing bricks. After
+                    completing the design, we verify its physical stability. If the structure is unstable, we roll back
+                    to the stable state by removing all the unstable bricks and their subsequent ones and resume
+                    generation from that point.
                 </p>
                 <p></p>
                 <p></p>
@@ -192,31 +218,29 @@
     <hr style="max-width: 1400px;">
 
     <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Step by step generation of brick structures from text</h2>
+        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Step by step generation of brick
+            structures from text</h2>
 
-    
+
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/vessel.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/vessel.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/guitar.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/guitar.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/sofa.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/sofa.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
 
         </div>
 
         <div class="row" style="display: flex; align-items: center;">
 
-            
+
 
             <div class="col" style="flex: 1 1 30%;">
                 <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
@@ -233,25 +257,22 @@
                     "A basic sofa"
                 </p>
             </div>
-            
+
 
         </div>
 
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/bookshelf.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/bookshelf.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/chair.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/chair.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/fall_360/bench.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/fall_360/bench.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
         </div>
 
@@ -274,24 +295,23 @@
         </div>
     </div>
 
-    
+
 
 
     <hr style="max-width: 1400px;">
 
     <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Automated assembly of generated brick structures using robots (8x speed)</h2>
+        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Automated assembly of generated brick
+            structures using robots (8x speed)</h2>
 
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 40%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/robots/vessel_8x.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/robots/vessel_8x.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 40%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/robots/guitar_8x.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/robots/guitar_8x.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
         </div>
 
@@ -312,8 +332,10 @@
     <hr style="max-width: 1400px;">
 
     <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated brick structures assembled by humans</h2>
-        <img class="img-fluid" src="./assets/human_exec.jpg" alt="Examples of brick structures built in the real world by humans."/>
+        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated brick structures assembled by
+            humans</h2>
+        <img class="img-fluid" src="./assets/human_exec.jpg"
+            alt="Examples of brick structures built in the real world by humans." />
     </div>
 
     <hr style="max-width: 1400px;">
@@ -324,23 +346,23 @@
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/others/rustic_stone_bench_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/others/rustic_stone_bench_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/others/hot_rod_with_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/others/hot_rod_with_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/others/live_edge_walnut_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/others/live_edge_walnut_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
         </div>
 
@@ -366,27 +388,27 @@
                 </p>
             </div>
         </div>
-    
+
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4" style="width: 100%"
+                    type="video/mp4"></video>
             </div>
         </div>
 
@@ -416,18 +438,18 @@
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <video autoplay controls loop muted playsinline
-                                            src="all_results/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                    src="all_results/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
         </div>
 
@@ -454,27 +476,23 @@
     <div class="container" style="max-width: 1400px;">
         <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated Colored Brick Models</h2>
 
-    
+
         <div class="row" style="display: flex; align-items: center;">
             <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/color/guitar/guitar_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/color/guitar/guitar_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/color/guitar/purple_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/color/guitar/purple_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/color/guitar/steel_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/color/guitar/steel_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
             <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                                            src="all_results/color/guitar/sunburst_rotate.mp4"
-                                            style="width: 100%" type="video/mp4"></video>
+                <video autoplay controls loop muted playsinline src="all_results/color/guitar/sunburst_rotate.mp4"
+                    style="width: 100%" type="video/mp4"></video>
             </div>
         </div>
 
@@ -496,7 +514,7 @@
             </div>
             <div class="col" style="flex: 1 1 20%;">
                 <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Sunburst Les Paul with amber finish  [...]"
+                    "Sunburst Les Paul with amber finish [...]"
                 </p>
             </div>
         </div>
@@ -526,8 +544,14 @@
             <div class="col-md-12">
                 <h2 class="text-left" style="margin-bottom: 30px; margin-top: 10px;">Acknowledgements</h2>
                 <p>
-                    We thank Minchen Li, Ken Goldberg, Nupur Kumari, Ruihan Gao, and Yihao Shi for their discussions and help. We also thank Jiaoyang Li, Philip Huang, and Shobhit Aggarwal for developing the bimanual robotic system. This work is partly supported by the Packard Foundation, Cisco Research Grant, and Amazon Faculty Award. This work is also in part supported by the Manufacturing Futures Institute, Carnegie Mellon University, through a grant from the Richard King Mellon Foundation. KD is supported by the Microsoft Research PhD Fellowship. The website template
-                    is taken from <a href="https://www.cs.cmu.edu/~custom-diffusion/">Custom Diffusion</a> (which was built on <a href="https://dreamfusion3d.github.io/index.html">DreamFusion</a>'s project page).
+                    We thank Minchen Li, Ken Goldberg, Nupur Kumari, Ruihan Gao, and Yihao Shi for their discussions and
+                    help. We also thank Jiaoyang Li, Philip Huang, and Shobhit Aggarwal for developing the bimanual
+                    robotic system. This work is partly supported by the Packard Foundation, Cisco Research Grant, and
+                    Amazon Faculty Award. This work is also in part supported by the Manufacturing Futures Institute,
+                    Carnegie Mellon University, through a grant from the Richard King Mellon Foundation. KD is supported
+                    by the Microsoft Research PhD Fellowship. The website template
+                    is taken from <a href="https://www.cs.cmu.edu/~custom-diffusion/">Custom Diffusion</a> (which was
+                    built on <a href="https://dreamfusion3d.github.io/index.html">DreamFusion</a>'s project page).
                 </p>
 
             </div>
@@ -547,10 +571,6 @@
     <script src="images/jquery.min.js"></script>
     <script src="images/bootstrap.bundle.min.js"></script>
     <script src="images/webflow.fd002feec.js"></script>
-
-    <!-- Import the component -->
-
-
 
 </body>
 
