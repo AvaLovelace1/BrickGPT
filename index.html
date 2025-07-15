@@ -29,489 +29,390 @@
 </head>
 
 <body>
-    <div class="container d-flex flex-column align-items-center mt-5 mb-5">
-        <hgroup class="max-w-md text-center mb-4">
-            <h1 class="display-5 mb-3">
-                Generating Physically Stable and Buildable Brick Structures from Text
-            </h1>
-            <div class="mb-3">
-                <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 fs-5 mb-1">
-                    <li><a href="https://avapun.com/">Ava&nbsp;Pun</a>*</li>
-                    <li><a href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>*</li>
-                    <li><a href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>*</li>
-                    <li><a href="https://www.cs.cmu.edu/~deva/">Deva&nbsp;Ramanan</a></li>
-                    <li><a href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a></li>
-                    <li><a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan&nbsp;Zhu</a></li>
-                </ul>
-                <div class="fs-4">Carnegie Mellon University</div>
-            </div>
-            <p><small>* denotes equal contribution</small></p>
-        </hgroup>
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <hgroup class="text-center mb-4 max-w-md">
+                <h1 class="display-5 mb-3">
+                    Generating Physically Stable and Buildable Brick Structures from Text
+                </h1>
+                <div class="mb-3">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 fs-5 mb-1">
+                        <li><a href="https://avapun.com/">Ava&nbsp;Pun</a>*</li>
+                        <li><a href="https://dunbar12138.github.io/">Kangle&nbsp;Deng</a>*</li>
+                        <li><a href="https://waynekyrie.github.io/">Ruixuan&nbsp;Liu</a>*</li>
+                        <li><a href="https://www.cs.cmu.edu/~deva/">Deva&nbsp;Ramanan</a></li>
+                        <li><a href="https://www.ri.cmu.edu/ri-faculty/changliu-liu/">Changliu&nbsp;Liu</a></li>
+                        <li><a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan&nbsp;Zhu</a></li>
+                    </ul>
+                    <div class="fs-4">Carnegie Mellon University</div>
+                </div>
+                <p><small>* denotes equal contribution</small></p>
+            </hgroup>
 
-        <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 row-gap-2">
-            <li>
-                <a class="btn btn-light" href="https://arxiv.org/abs/2505.05469">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
-                        </path>
-                    </svg>&nbsp;&nbsp;
-                    arXiv
-                </a>
-            </li>
-            <li>
-                <a class="btn btn-light" href="https://github.com/AvaLovelace1/BrickGPT/">
-                    <svg width="24px" height="24px" viewBox="0 0 475 531">
-                        <path fill="currentColor"
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                        </path>
-                    </svg>&nbsp;&nbsp;
-                    Code
-                </a>
-            </li>
-            <li>
-                <a class="btn btn-light" href="https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo">
-                    <svg width="24px" height="24px" viewBox="0 0 640 512">
-                        <path
-                            d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z" />
-                    </svg>&nbsp;&nbsp;
-                    Demo
-                </a>
-            </li>
-        </ul>
-        <noscript>
-            <p class="text-danger small">Enable JavaScript to play videos.</p>
-        </noscript>
-        <video controls loop muted src="assets/brickgpt-v2.mp4" class="w-100"></video>
-    </div>
-
-    <hr style="max-width: 1400px;">
-
-    <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Overview</h2>
-
-    <div class="container" style="max-width: 1400px;">
-        <p style="font-size:19px" ;> <span style="font-weight:900">BrickGPT</span> generates a toy brick structure from
-            a user-provided text prompt in an end-to-end manner. Notably, our generated brick structure is physically
-            stable and buildable. </p>
-        <img src="./assets/teaser.jpg" style="width: 100%;" />
-    </div>
-
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Abstract</h2>
-                <p>
-                    We introduce <span style="font-weight:900">BrickGPT</span>, the first approach for generating
-                    physically stable toy brick models from text prompts. To achieve this, we construct a large-scale,
-                    physically stable dataset of brick designs, along with their associated captions, and train an
-                    autoregressive large language model to predict the next brick to add via next-token prediction. To
-                    improve the stability of the resulting designs, we employ an efficient validity check and
-                    physics-aware rollback during autoregressive inference, which prunes infeasible token predictions
-                    using physics laws and assembly constraints. Our experiments show that <span
-                        style="font-weight:900">BrickGPT</span> produces stable, diverse, and aesthetically pleasing
-                    brick designs that align closely with the input text prompts. We also develop a text-based brick
-                    texturing method to generate colored and textured designs. We show that our designs can be assembled
-                    manually by humans and automatically by robotic arms. We also release our new dataset, <span
-                        style="font-weight:900">StableText2Brick</span>, containing over 47,000 brick structures of over
-                    28,000 unique 3D objects accompanied by detailed captions, along with our code and models.
-                </p>
-
-            </div>
+            <ul class="list-unstyled d-flex flex-wrap justify-content-center column-gap-3 row-gap-2">
+                <li>
+                    <a class="btn btn-light" href="https://arxiv.org/abs/2505.05469">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z">
+                            </path>
+                        </svg>&nbsp;&nbsp;
+                        arXiv
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-light" href="https://github.com/AvaLovelace1/BrickGPT/">
+                        <svg width="24px" height="24px" viewBox="0 0 475 531">
+                            <path fill="currentColor"
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                        </svg>&nbsp;&nbsp;
+                        Code
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-light" href="https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo">
+                        <svg width="24px" height="24px" viewBox="0 0 640 512">
+                            <path
+                                d="M128 32C92.7 32 64 60.7 64 96l0 256 64 0 0-256 384 0 0 256 64 0 0-256c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2C0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8c0-10.6-8.6-19.2-19.2-19.2L19.2 384z" />
+                        </svg>&nbsp;&nbsp;
+                        Demo
+                    </a>
+                </li>
+            </ul>
+            <noscript>
+                <p class="text-danger small">Enable JavaScript to play videos.</p>
+            </noscript>
+            <video controls loop muted src="assets/brickgpt-v2.mp4" class="w-100 max-w-md"></video>
         </div>
     </div>
 
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">StableText2Brick Dataset</h2>
-                <p>
-                    (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
-                    \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each shape
-                    with multiple structural variations by randomizing the brick layout while preserving the overall
-                    shape. (c) Stability analysis is performed on each variation to filter out physically unstable
-                    designs. (d) To obtain the corresponding captions for each shape, we render the brick design from 24
-                    different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data samples
-                    from 5 categories in our <span style="font-weight:900">StableText2Brick</span> dataset.
-                </p>
-                <p></p>
-                <p></p>
-                <img src="./assets/dataset.jpg" style="width: 100%;" />
-                <p></p>
-                <p></p>
+    <div class="container">
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Overview</h2>
+        <p id="overview" class="lead mb-4">
+            <b class="fw-bold">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
+            end-to-end manner. Notably, our generated brick structure is physically stable and buildable.
+        </p>
+        <img src="./assets/teaser.jpg" aria-labelledby="overview" class="w-100" />
 
-            </div>
-        </div>
-    </div>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Abstract</h2>
+        <p id="abstract" class="mb-4">
+            We introduce <b class="fw-bold">BrickGPT</b>, the first approach for generating
+            physically stable toy brick models from text prompts. To achieve this, we construct a
+            large-scale, physically stable dataset of brick designs, along with their associated captions, and train
+            an autoregressive large language model to predict the next brick to add via next-token prediction.
+            To improve the stability of the resulting designs, we employ an efficient validity check and
+            physics-aware rollback during autoregressive inference, which prunes infeasible token
+            predictions using physics laws and assembly constraints. Our experiments show that
+            <b class="fw-bold">BrickGPT</b> produces stable, diverse, and aesthetically pleasing
+            brick designs that align closely with the input text prompts. We also develop a text-based brick
+            texturing method to generate colored and textured designs. We show that our designs can be
+            assembled manually by humans and automatically by robotic arms. We also release our new dataset,
+            <b class="fw-bold">StableText2Brick</b>, containing over 47,000 brick structures of
+            over 28,000 unique 3D objects accompanied by detailed captions, along with our code and models.
+        </p>
 
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">BrickGPT Pipeline</h2>
-                <p>
-                    (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
-                    manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
-                    descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <span
-                        style="font-weight:900">BrickGPT</span> generates brick designs incrementally by predicting one
-                    brick at a time given a text prompt. For each generated brick, we perform validity checks to ensure
-                    it is well-formatted, exists in our brick library, and does not collide with existing bricks. After
-                    completing the design, we verify its physical stability. If the structure is unstable, we roll back
-                    to the stable state by removing all the unstable bricks and their subsequent ones and resume
-                    generation from that point.
-                </p>
-                <p></p>
-                <p></p>
-                <img src="./assets/pipeline.jpg" style="width: 100%;" />
-                <p></p>
-                <p></p>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">StableText2Brick Dataset</h2>
+        <p id="dataset" class="mb-4">
+            (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
+            \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each
+            shape with multiple structural variations by randomizing the brick layout while preserving the overall
+            shape. (c) Stability analysis is performed on each variation to filter out physically unstable
+            designs. (d) To obtain the corresponding captions for each shape, we render the brick design
+            from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data
+            samples from 5 categories in our <b class="fw-bold">StableText2Brick</b> dataset.
+        </p>
+        <img src="./assets/dataset.jpg" aria-labelledby="dataset" class="w-100" />
 
-            </div>
-        </div>
-    </div>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">BrickGPT Pipeline</h2>
+        <p id="pipeline" class="mb-4">
+            (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
+            manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
+            descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <b class="fw-bold">BrickGPT</b>
+            generates brick designs incrementally by predicting
+            one brick at a time given a text prompt. For each generated brick, we perform validity checks to
+            ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks.
+            After completing the design, we verify its physical stability. If the structure is unstable, we roll
+            back to the stable state by removing all the unstable bricks and their subsequent ones and resume
+            generation from that point.
+        </p>
+        <img src="./assets/pipeline.jpg" aria-labelledby="pipeline" class="w-100" />
 
-    <hr style="max-width: 1400px;">
-
-    <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Step by step generation of brick
-            structures from text</h2>
-
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/vessel.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/guitar.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 30%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/sofa.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-
-        </div>
-
-        <div class="row" style="display: flex; align-items: center;">
-
-
-
-            <div class="col" style="flex: 1 1 30%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A streamlined vessel with a long, narrow hull"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 30%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A classical guitar"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 30%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A basic sofa"
-                </p>
-            </div>
-
-
-        </div>
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bookshelf.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/chair.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 25%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bench.mp4"
-                    style="width: 100%" type="video/mp4"></video>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Step by step generation of brick structures from text</h2>
+        <div class="container-fluid">
+            <div class="row align-items-start row-cols-2 row-cols-md-3 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/vessel.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A streamlined vessel with a long, narrow hull"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/guitar.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A classical guitar"</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/sofa.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A basic sofa"</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bookshelf.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A bookshelf with horizontal tiers"</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/chair.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A high-backed chair"</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bench.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">"A backless bench with armrest"</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 25%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A bookshelf with horizontal tiers"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 25%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A high-backed chair"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 25%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A backless bench with armrest"
-                </p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <hr style="max-width: 1400px;">
-
-    <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Automated assembly of generated brick
-            structures using robots (8x speed)</h2>
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 40%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/robots/vessel_8x.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 40%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/robots/guitar_8x.mp4"
-                    style="width: 100%" type="video/mp4"></video>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Automated assembly of generated brick structures using robots (8x speed)</h2>
+        <div class="container-fluid">
+            <div class="row align-items-start row-cols-2 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/robots/vessel_8x.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "A streamlined vessel with a long, narrow hull [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline data-src="all_results/robots/guitar_8x.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "An asymmetrical six-string guitar [...]"
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 40%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "A streamlined vessel with a long, narrow hull [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 40%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "An asymmetrical six-string guitar [...]"
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <hr style="max-width: 1400px;">
-
-    <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated brick structures assembled by
-            humans</h2>
-        <img class="img-fluid" src="./assets/human_exec.jpg"
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Generated brick structures assembled by humans</h2>
+        <img class="w-100" src="./assets/human_exec.jpg"
             alt="Examples of brick structures built in the real world by humans." />
-    </div>
 
-    <hr style="max-width: 1400px;">
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Generated textured brick models</h2>
+        <div class="container-fluid">
+            <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/others/rustic_stone_bench_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Rustic stone bench with moss growth [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/others/hot_rod_with_full_color_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Hot rod with flame paintwork [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Rustic farmhouse chair built from reclaimed wood [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/others/live_edge_walnut_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Live edge walnut table [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
 
-    <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated Textured Brick Models</h2>
+            <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Comfortable lounge chair wrapped in Japanese shibori fabric [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Cyberpunk holographic material with neon purple and blue gradients [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Rustic farmhouse armchair built from reclaimed wood [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Vintage floral tapestry with deep reds and golds [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/others/rustic_stone_bench_full_color_rotate.mp4" style="width: 100%"
-                    type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/others/hot_rod_with_full_color_rotate.mp4" style="width: 100%"
-                    type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/others/live_edge_walnut_full_color_rotate.mp4" style="width: 100%"
-                    type="video/mp4"></video>
+            <div class="row align-items-start row-cols-3 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Gothic cathedral bookshelf with arch details, medieval style [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Japanese sliding bookcase with shoji screens, traditional design [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Victorian library shelving with carved moldings [...]"
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Rustic stone bench with moss growth [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Hot rod with flame paintwork [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Rustic farmhouse chair built from reclaimed wood [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Live edge walnut table [...]"
-                </p>
-            </div>
-        </div>
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-        </div>
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Comfortable lounge chair wrapped in Japanese shibori fabric [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Cyberpunk holographic material with neon purple and blue gradients [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Rustic farmhouse armchair built from reclaimed wood [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Vintage floral tapestry with deep reds and golds [...]"
-                </p>
+        <hr class="my-4" />
+        <h2 class="text-center mb-4">Generated colored brick models</h2>
+        <div class="container-fluid">
+            <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 text-center">
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/color/guitar/guitar_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Parlor guitar with ladder bracing [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/color/guitar/purple_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Electric guitar in metallic purple [...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/color/guitar/steel_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Steel resonator with engraved body[...]"
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <video autoplay controls loop muted playsinline
+                            data-src="all_results/color/guitar/sunburst_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
+                        <figcaption style="font-family: Chalkduster;">
+                            "Sunburst Les Paul with amber finish [...]"
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline
-                    data-src="all_results/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-        </div>
+        <hr class="my-4" />
+        <h2 class="mb-4 fs-3">Citation</h2>
+        <pre><code>@article{pun2025brickgpt,
+    title   = {Generating Physically Stable and Buildable Brick Structures from Text},
+    author  = {Pun, Ava and Deng, Kangle and Liu, Ruixuan and Ramanan, Deva and Liu, Changliu and Zhu, Jun-Yan},
+    journal = {arXiv preprint arXiv:2505.05469},
+    year    = {2025}
+}</code></pre>
 
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Gothic cathedral bookshelf with arch details, medieval style [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Japanese sliding bookcase with shoji screens, traditional design [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Victorian library shelving with carved moldings [...]"
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <h2 class="text-center" style="margin-bottom: 30px; margin-top: 10px;">Generated Colored Brick Models</h2>
-
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/color/guitar/guitar_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/color/guitar/purple_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/color/guitar/steel_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <video autoplay controls loop muted playsinline data-src="all_results/color/guitar/sunburst_rotate.mp4"
-                    style="width: 100%" type="video/mp4"></video>
-            </div>
-        </div>
-
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Parlor guitar with ladder bracing [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Electric guitar in metallic purple [...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Steel resonator with engraved body[...]"
-                </p>
-            </div>
-            <div class="col" style="flex: 1 1 20%;">
-                <p style="font-family: Chalkduster; font-size: 16px; margin-top: 5px; text-align: center;">
-                    "Sunburst Les Paul with amber finish [...]"
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-left" style="margin-bottom: 30px; margin-top: 10px;">Citation</h2>
-                <code>
-                    @article{pun2025brickgpt,<br>
-                        &nbsp; title   = {Generating Physically Stable and Buildable Brick Structures from Text},<br>
-                        &nbsp; author  = {Pun, Ava and Deng, Kangle and Liu, Ruixuan and Ramanan, Deva and Liu, Changliu and Zhu, Jun-Yan},<br>
-                        &nbsp; journal = {arXiv preprint arXiv:2505.05469},<br>
-                        &nbsp; year    = {2025}<br>
-                    }
-                </code>
-
-            </div>
-        </div>
-    </div>
-
-    <hr style="max-width: 1400px;">
-    <div class="container" style="max-width: 1400px;">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-left" style="margin-bottom: 30px; margin-top: 10px;">Acknowledgements</h2>
-                <p>
-                    We thank Minchen Li, Ken Goldberg, Nupur Kumari, Ruihan Gao, and Yihao Shi for their discussions and
-                    help. We also thank Jiaoyang Li, Philip Huang, and Shobhit Aggarwal for developing the bimanual
-                    robotic system. This work is partly supported by the Packard Foundation, Cisco Research Grant, and
-                    Amazon Faculty Award. This work is also in part supported by the Manufacturing Futures Institute,
-                    Carnegie Mellon University, through a grant from the Richard King Mellon Foundation. KD is supported
-                    by the Microsoft Research PhD Fellowship. The website template
-                    is taken from <a href="https://www.cs.cmu.edu/~custom-diffusion/">Custom Diffusion</a> (which was
-                    built on <a href="https://dreamfusion3d.github.io/index.html">DreamFusion</a>'s project page).
-                </p>
-
-            </div>
-        </div>
+        <hr class="my-4" />
+        <h2 class="mb-4 fs-3">Acknowledgements</h2>
+        <p>
+            We thank Minchen Li, Ken Goldberg, Nupur Kumari, Ruihan Gao, and Yihao Shi for their discussions
+            and help. We also thank Jiaoyang Li, Philip Huang, and Shobhit Aggarwal for developing the bimanual
+            robotic system. This work is partly supported by the Packard Foundation, Cisco Research Grant,
+            and Amazon Faculty Award. This work is also in part supported by the Manufacturing Futures
+            Institute, Carnegie Mellon University, through a grant from the Richard King Mellon Foundation. KD is
+            supported by the Microsoft Research PhD Fellowship. The website template
+            is taken from <a href="https://www.cs.cmu.edu/~custom-diffusion/">Custom Diffusion</a> (which was
+            built on <a href="https://dreamfusion3d.github.io/index.html">DreamFusion</a>'s project page).
+        </p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.2.0/dist/lazyload.min.js"></script>
@@ -521,6 +422,7 @@
             use_native: true,
         });
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 
 </html>
