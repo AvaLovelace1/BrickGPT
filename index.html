@@ -15,12 +15,12 @@
         content="Official website for BrickGPT, the first approach for generating physically stable toy brick models from text prompts.">
     <meta property="og:url" content="https://avalovelace1.github.io/BrickGPT/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/teaser.jpg">
-    <meta property="og:video" content="assets/brickgpt-v2.mp4">
+    <meta property="og:image" content="images/teaser.jpg">
+    <meta property="og:video" content="videos/brickgpt-v2.mp4">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="all_results/images/sofa.png">
-    <link rel="apple-touch-icon" href="all_results/images/sofa.png">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="images/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -109,9 +109,9 @@
                 </li>
             </ul>
             <noscript>
-                <p class="text-danger small">Enable JavaScript to play videos.</p>
+                <p class="text-danger small text-center">Enable JavaScript to play videos.</p>
             </noscript>
-            <video controls loop muted src="assets/brickgpt-v2.mp4" class="w-100 max-w-md"></video>
+            <video controls loop muted src="videos/brickgpt-v2.mp4" class="w-100 max-w-md"></video>
         </div>
     </div>
 
@@ -122,7 +122,7 @@
             <b class="fw-bolder">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
             end-to-end manner. Notably, our generated brick structure is physically stable and buildable.
         </p>
-        <img src="assets/teaser.jpg" alt="BrickGPT overview" aria-describedby="overview" class="w-100" />
+        <img src="images/teaser.jpg" alt="BrickGPT overview" aria-describedby="overview" class="w-100" />
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Abstract</h2>
@@ -145,7 +145,7 @@
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">StableText2Brick Dataset</h2>
         <figure class="figure">
-            <img src="assets/dataset.jpg" class="figure-img w-100"
+            <img src="images/dataset.jpg" class="figure-img w-100"
                 alt="StableText2Brick dataset construction pipeline" />
             <figcaption class="figure-caption">
                 (a) From a ShapeNetCore mesh, we generate a brick structure by voxelizing it onto a 20×20×20 grid,
@@ -161,7 +161,7 @@
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">BrickGPT Pipeline</h2>
         <figure class="figure">
-            <img src="assets/pipeline.jpg" class="figure-img w-100" alt="BrickGPT pipeline" />
+            <img src="images/pipeline.jpg" class="figure-img w-100" alt="BrickGPT pipeline" />
             <figcaption class="figure-caption">
                 (a) Our system tokenizes a brick structure into a sequence of text tokens, ordered in a raster-scan
                 manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
@@ -180,42 +180,42 @@
             <div class="row align-items-start row-cols-2 row-cols-md-3 row-gap-2">
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/vessel.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/vessel.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A streamlined vessel with a long, narrow hull”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/guitar.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/guitar.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A classical guitar”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/sofa.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/sofa.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A basic sofa”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bookshelf.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/bookshelf.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A bookshelf with horizontal tiers”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/chair.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/chair.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A high-backed chair”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/fall_360/bench.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/step-by-step/bench.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A backless bench with armrest”</figcaption>
                     </figure>
@@ -229,14 +229,14 @@
             <div class="row align-items-start row-cols-2 row-gap-2">
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/robots/vessel_8x.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/robots/vessel_8x.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“A streamlined vessel with a long, narrow hull […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline data-src="all_results/robots/guitar_8x.mp4"
+                        <video autoplay controls loop muted playsinline data-src="videos/robots/guitar_8x.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“An asymmetrical six-string guitar […]”</figcaption>
                     </figure>
@@ -246,7 +246,7 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated brick structures assembled by humans</h2>
-        <img class="w-100" src="./assets/human_exec.jpg"
+        <img class="w-100" src="images/human_exec.jpg"
             alt="Examples of brick structures built in the real world by humans." />
 
         <hr class="my-4 my-md-5" />
@@ -256,15 +256,15 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/others/rustic_stone_bench_full_color_rotate.mp4"
-                            class="w-100 mb-1" type="video/mp4"></video>
+                            data-src="videos/texture/others/rustic_stone_bench_full_color_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
                         <figcaption>“Rustic stone bench with moss growth […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/others/hot_rod_with_full_color_rotate.mp4" class="w-100 mb-1"
+                            data-src="videos/texture/others/hot_rod_with_full_color_rotate.mp4" class="w-100 mb-1"
                             type="video/mp4"></video>
                         <figcaption>“Hot rod with flame paintwork […]”</figcaption>
                     </figure>
@@ -272,7 +272,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4"
+                            data-src="videos/texture/others/rustic_farmhouse_chair_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Rustic farmhouse chair built from reclaimed wood […]”</figcaption>
                     </figure>
@@ -280,15 +280,15 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/others/live_edge_walnut_full_color_rotate.mp4"
-                            class="w-100 mb-1" type="video/mp4"></video>
+                            data-src="videos/texture/others/live_edge_walnut_full_color_rotate.mp4" class="w-100 mb-1"
+                            type="video/mp4"></video>
                         <figcaption>“Live edge walnut table […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4"
+                            data-src="videos/texture/sofa/comfortable_lounge_chair_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Comfortable lounge chair wrapped in Japanese shibori fabric […]”</figcaption>
                     </figure>
@@ -296,7 +296,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
+                            data-src="videos/texture/sofa/cyberpunk_holographic_material_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Cyberpunk holographic material with neon purple and blue gradients […]”
                         </figcaption>
@@ -305,7 +305,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4"
+                            data-src="videos/texture/sofa/rustic_farmhouse_armchair_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Rustic farmhouse armchair built from reclaimed wood […]”</figcaption>
                     </figure>
@@ -313,7 +313,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4"
+                            data-src="videos/texture//sofa/vintage_floral_tapestry_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Vintage floral tapestry with deep reds and golds […]” </figcaption>
                     </figure>
@@ -324,7 +324,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
+                            data-src="videos/texture/bookshelf/gothic_cathedral_bookshelf_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Gothic cathedral bookshelf with arch details, medieval style […]”</figcaption>
                     </figure>
@@ -332,7 +332,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
+                            data-src="videos/texture/bookshelf/japanese_sliding_bookcase_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Japanese sliding bookcase with shoji screens, traditional design […]”</figcaption>
                     </figure>
@@ -340,7 +340,7 @@
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
+                            data-src="videos/texture/bookshelf/victorian_library_shelving_full_color_rotate.mp4"
                             class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Victorian library shelving with carved moldings […]”</figcaption>
                     </figure>
@@ -354,32 +354,29 @@
             <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2">
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline
-                            data-src="all_results/color/guitar/guitar_rotate.mp4" class="w-100 mb-1"
-                            type="video/mp4"></video>
+                        <video autoplay controls loop muted playsinline data-src="videos/color/guitar/guitar_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Parlor guitar with ladder bracing […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline
-                            data-src="all_results/color/guitar/purple_rotate.mp4" class="w-100 mb-1"
-                            type="video/mp4"></video>
+                        <video autoplay controls loop muted playsinline data-src="videos/color/guitar/purple_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Electric guitar in metallic purple […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
-                        <video autoplay controls loop muted playsinline
-                            data-src="all_results/color/guitar/steel_rotate.mp4" class="w-100 mb-1"
-                            type="video/mp4"></video>
+                        <video autoplay controls loop muted playsinline data-src="videos/color/guitar/steel_rotate.mp4"
+                            class="w-100 mb-1" type="video/mp4"></video>
                         <figcaption>“Steel resonator with engraved body […]”</figcaption>
                     </figure>
                 </div>
                 <div class="col">
                     <figure>
                         <video autoplay controls loop muted playsinline
-                            data-src="all_results/color/guitar/sunburst_rotate.mp4" class="w-100 mb-1"
+                            data-src="videos/color/guitar/sunburst_rotate.mp4" class="w-100 mb-1"
                             type="video/mp4"></video>
                         <figcaption>“Sunburst Les Paul with amber finish […]”</figcaption>
                     </figure>
