@@ -122,11 +122,11 @@
             <b class="fw-bolder">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
             end-to-end manner. Notably, our generated brick structure is physically stable and buildable.
         </p>
-        <img src="./assets/teaser.jpg" aria-labelledby="overview" class="w-100" />
+        <img src="assets/teaser.jpg" alt="BrickGPT overview" aria-describedby="overview" class="w-100" />
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Abstract</h2>
-        <p id="abstract" class="max-w-md mx-auto mb-4">
+        <p class="max-w-md mx-auto mb-4">
             We introduce <b class="fw-bolder">BrickGPT</b>, the first approach for generating
             physically stable toy brick models from text prompts. To achieve this, we construct a
             large-scale, physically stable dataset of brick designs, along with their associated captions, and train
@@ -144,31 +144,36 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">StableText2Brick Dataset</h2>
-        <p id="dataset" class="mb-4">
-            (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
-            \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each
-            shape with multiple structural variations by randomizing the brick layout while preserving the overall
-            shape. (c) Stability analysis is performed on each variation to filter out physically unstable
-            designs. (d) To obtain the corresponding captions for each shape, we render the brick design
-            from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data
-            samples from 5 categories in our <b class="fw-bolder">StableText2Brick</b> dataset.
-        </p>
-        <img src="./assets/dataset.jpg" aria-labelledby="dataset" class="w-100" />
+        <figure class="figure">
+            <img src="assets/dataset.jpg" class="figure-img w-100"
+                alt="StableText2Brick dataset construction pipeline" />
+            <figcaption class="figure-caption">
+                (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
+                \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each
+                shape with multiple structural variations by randomizing the brick layout while preserving the overall
+                shape. (c) Stability analysis is performed on each variation to filter out physically unstable
+                designs. (d) To obtain the corresponding captions for each shape, we render the brick design
+                from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data
+                samples from 5 categories in our <b class="fw-bolder">StableText2Brick</b> dataset.
+            </figcaption>
+        </figure>
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">BrickGPT Pipeline</h2>
-        <p id="pipeline" class="mb-4">
-            (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
-            manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
-            descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time, <b class="fw-bolder">BrickGPT</b>
-            generates brick designs incrementally by predicting
-            one brick at a time given a text prompt. For each generated brick, we perform validity checks to
-            ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks.
-            After completing the design, we verify its physical stability. If the structure is unstable, we roll
-            back to the stable state by removing all the unstable bricks and their subsequent ones and resume
-            generation from that point.
-        </p>
-        <img src="./assets/pipeline.jpg" aria-labelledby="pipeline" class="w-100" />
+        <figure class="figure">
+            <img src="assets/pipeline.jpg" class="figure-img w-100" alt="BrickGPT pipeline" />
+            <figcaption class="figure-caption">
+                (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
+                manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
+                descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time,
+                <b class="fw-bolder">BrickGPT</b> generates brick designs incrementally by predicting
+                one brick at a time given a text prompt. For each generated brick, we perform validity checks to
+                ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks.
+                After completing the design, we verify its physical stability. If the structure is unstable, we roll
+                back to the stable state by removing all the unstable bricks and their subsequent ones and resume
+                generation from that point.
+            </figcaption>
+        </figure>
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Step by step generation of brick structures from text</h2>
