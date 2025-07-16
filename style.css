@@ -16,6 +16,10 @@ h6 {
     font-family: var(--bs-heading-font-family);
 }
 
+.font-sans {
+    font-family: var(--bs-font-sans-serif);
+}
+
 .font-cursive {
     font-family: var(--bs-font-cursive);
 }
