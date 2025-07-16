@@ -148,13 +148,13 @@
             <img src="assets/dataset.jpg" class="figure-img w-100"
                 alt="StableText2Brick dataset construction pipeline" />
             <figcaption class="figure-caption">
-                (a) From a ShapeNetCore mesh, we generate a brick design by voxelizing it onto a \(20\times 20
-                \times 20\) grid and applying legolization to determine the brick layout. (b) We augment each
-                shape with multiple structural variations by randomizing the brick layout while preserving the overall
-                shape. (c) Stability analysis is performed on each variation to filter out physically unstable
-                designs. (d) To obtain the corresponding captions for each shape, we render the brick design
-                from 24 different viewpoints and use GPT-4o to generate detailed geometric descriptions. (e) Data
-                samples from 5 categories in our <b class="fw-bolder">StableText2Brick</b> dataset.
+                (a) From a ShapeNetCore mesh, we generate a brick structure by voxelizing it onto a 20×20×20 grid,
+                then constructing its brick layout with a delete-and-rebuild algorithm. (b) We augment each shape with
+                multiple structural variations by randomizing the brick layout while preserving the overall shape. (c)
+                Stability analysis is performed on each variation to filter out physically unstable designs. (d) To
+                obtain captions for each shape, we render the brick structure from 24 different viewpoints and use
+                GPT-4o to generate detailed geometric descriptions. (e) Data samples from 5 categories in our
+                <b class="fw-bolder">StableText2Brick</b> dataset.
             </figcaption>
         </figure>
 
@@ -163,21 +163,20 @@
         <figure class="figure">
             <img src="assets/pipeline.jpg" class="figure-img w-100" alt="BrickGPT pipeline" />
             <figcaption class="figure-caption">
-                (a) Our system tokenizes a brick design into a sequence of text tokens, ordered in a raster-scan
+                (a) Our system tokenizes a brick structure into a sequence of text tokens, ordered in a raster-scan
                 manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
                 descriptions to fine-tune LLaMA-3.2-Instruct-1B. (c) At inference time,
-                <b class="fw-bolder">BrickGPT</b> generates brick designs incrementally by predicting
-                one brick at a time given a text prompt. For each generated brick, we perform validity checks to
-                ensure it is well-formatted, exists in our brick library, and does not collide with existing bricks.
-                After completing the design, we verify its physical stability. If the structure is unstable, we roll
-                back to the stable state by removing all the unstable bricks and their subsequent ones and resume
-                generation from that point.
+                <b class="fw-bolder">BrickGPT</b> generates brick structures incrementally by predicting one brick at a
+                time given a text prompt. For each generated brick, we perform validity checks to ensure it is
+                well-formatted, exists in our brick library, and does not collide with existing bricks. After completing
+                the design, we verify its physical stability. If the structure is unstable, we roll back to a stable
+                state by removing all unstable bricks and their subsequent ones, and resume generation from that point.
             </figcaption>
         </figure>
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Step by step generation of brick structures from text</h2>
-        <div class="container-fluid text-center font-cursive fs-5">
+        <div class="container-fluid text-center font-cursive">
             <div class="row align-items-start row-cols-2 row-cols-md-3 row-gap-2">
                 <div class="col">
                     <figure>
@@ -226,7 +225,7 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Automated assembly of generated brick structures using robots (8x speed)</h2>
-        <div class="container-fluid text-center font-cursive fs-5">
+        <div class="container-fluid text-center font-cursive">
             <div class="row align-items-start row-cols-2 row-gap-2">
                 <div class="col">
                     <figure>
@@ -252,7 +251,7 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated textured brick models</h2>
-        <div class="container-fluid text-center font-cursive fs-5">
+        <div class="container-fluid text-center font-cursive">
             <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2 mb-3">
                 <div class="col">
                     <figure>
@@ -351,7 +350,7 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="text-center mb-4">Generated colored brick models</h2>
-        <div class="container-fluid text-center font-cursive fs-5">
+        <div class="container-fluid text-center font-cursive">
             <div class="row align-items-start row-cols-2 row-cols-md-4 row-gap-2">
                 <div class="col">
                     <figure>
@@ -390,7 +389,7 @@
 
         <hr class="my-4 my-md-5" />
         <h2 class="mb-3 fs-4">Citation</h2>
-        <pre><code>@article{pun2025brickgpt,
+        <pre><code class="small">@article{pun2025brickgpt,
     title   = {Generating Physically Stable and Buildable Brick Structures from Text},
     author  = {Pun, Ava and Deng, Kangle and Liu, Ruixuan and Ramanan, Deva and Liu, Changliu and Zhu, Jun-Yan},
     journal = {arXiv preprint arXiv:2505.05469},
@@ -422,7 +421,6 @@
             use_native: true,
         });
     </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 
 </html>
