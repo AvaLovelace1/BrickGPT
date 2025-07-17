@@ -36,9 +36,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
-<body>
+<body id="pswp-gallery">
 <header>
     <div class="container d-flex flex-column align-items-center py-5">
         <div class="text-center mb-4 max-w-lg">
@@ -152,18 +153,20 @@
                 <b class="fw-bolder">BrickGPT</b> generates a toy brick structure from a user-provided text prompt in an
                 end-to-end manner. Notably, our generated brick structure is physically stable and buildable.
             </p>
-            <img srcset="images-optimized/teaser-540.webp 540w,
-                         images-optimized/teaser-1080.webp 1080w,
-                         images-optimized/teaser-1320.webp 1320w,
-                         images-optimized/teaser-2640.webp 2640w"
-                 sizes="(max-width: 575px) 100vw,
-                        (max-width: 767px) 540px,
-                        (max-width: 991px) 720px,
-                        (max-width: 1199px) 960px,
-                        (max-width: 1399px) 1140px,
-                        1320px"
-                 src="images-optimized/teaser-540.webp" alt="BrickGPT overview" aria-describedby="overview"
-                 class="img-fluid" width="2336" height="1120"/>
+            <a class="pswp-img" href="images-optimized/teaser-full.webp" data-pswp-width="2336" data-pswp-height="1120" target="_blank">
+                <img srcset="images-optimized/teaser-540.webp 540w,
+                            images-optimized/teaser-1080.webp 1080w,
+                            images-optimized/teaser-1320.webp 1320w,
+                            images-optimized/teaser-2640.webp 2640w"
+                    sizes="(max-width: 575px) 100vw,
+                            (max-width: 767px) 540px,
+                            (max-width: 991px) 720px,
+                            (max-width: 1199px) 960px,
+                            (max-width: 1399px) 1140px,
+                            1320px"
+                    src="images-optimized/teaser-540.webp" alt="BrickGPT overview" aria-describedby="overview"
+                    class="img-fluid" width="2336" height="1120"/>
+            </a>
         </div>
     </div>
 
@@ -191,18 +194,20 @@
     <div class="container py-5">
         <h2 class="text-center fs-3 mb-4">StableText2Brick dataset</h2>
         <figure class="figure">
-            <img srcset="images-optimized/dataset-540.webp 540w,
-                         images-optimized/dataset-1080.webp 1080w,
-                         images-optimized/dataset-1320.webp 1320w,
-                         images-optimized/dataset-2640.webp 2640w"
-                 sizes="(max-width: 575px) 100vw,
-                        (max-width: 767px) 540px,
-                        (max-width: 991px) 720px,
-                        (max-width: 1199px) 960px,
-                        (max-width: 1399px) 1140px,
-                        1320px"
-                 src="images-optimized/dataset-540.webp" class="figure-img img-fluid" width="3612" height="1178"
-                 alt="StableText2Brick dataset construction pipeline"/>
+            <a class="pswp-img" href="images-optimized/dataset-full.webp" data-pswp-width="3612" data-pswp-height="1178" target="_blank">
+                <img srcset="images-optimized/dataset-540.webp 540w,
+                            images-optimized/dataset-1080.webp 1080w,
+                            images-optimized/dataset-1320.webp 1320w,
+                            images-optimized/dataset-2640.webp 2640w"
+                    sizes="(max-width: 575px) 100vw,
+                            (max-width: 767px) 540px,
+                            (max-width: 991px) 720px,
+                            (max-width: 1199px) 960px,
+                            (max-width: 1399px) 1140px,
+                            1320px"
+                    src="images-optimized/dataset-540.webp" class="figure-img img-fluid" width="3612" height="1178"
+                    alt="StableText2Brick dataset construction pipeline"/>
+            </a>
             <figcaption class="figure-caption">
                 (a) From a ShapeNetCore mesh, we generate a brick structure by voxelizing it onto a 20×20×20 grid,
                 then constructing its brick layout with a delete-and-rebuild algorithm. (b) We augment each shape with
@@ -217,18 +222,20 @@
         <div class="py-4"></div>
         <h2 class="text-center fs-3 mb-4">BrickGPT pipeline</h2>
         <figure class="figure">
-            <img srcset="images-optimized/pipeline-540.webp 540w,
-                         images-optimized/pipeline-1080.webp 1080w,
-                         images-optimized/pipeline-1320.webp 1320w,
-                         images-optimized/pipeline-2640.webp 2640w"
-                 sizes="(max-width: 575px) 100vw,
-                        (max-width: 767px) 540px,
-                        (max-width: 991px) 720px,
-                        (max-width: 1199px) 960px,
-                        (max-width: 1399px) 1140px,
-                        1320px"
-                 src="images-optimized/pipeline-540.webp" class="figure-img img-fluid" width="3624" height="1610"
-                 alt="BrickGPT pipeline"/>
+            <a class="pswp-img" href="images-optimized/pipeline-full.webp" data-pswp-width="3624" data-pswp-height="1610" target="_blank">
+                <img srcset="images-optimized/pipeline-540.webp 540w,
+                            images-optimized/pipeline-1080.webp 1080w,
+                            images-optimized/pipeline-1320.webp 1320w,
+                            images-optimized/pipeline-2640.webp 2640w"
+                    sizes="(max-width: 575px) 100vw,
+                            (max-width: 767px) 540px,
+                            (max-width: 991px) 720px,
+                            (max-width: 1199px) 960px,
+                            (max-width: 1399px) 1140px,
+                            1320px"
+                    src="images-optimized/pipeline-540.webp" class="figure-img img-fluid" width="3624" height="1610"
+                    alt="BrickGPT pipeline"/>
+            </a>
             <figcaption class="figure-caption">
                 (a) Our system tokenizes a brick structure into a sequence of text tokens, ordered in a raster-scan
                 manner from bottom to top. (b) We create an instruction dataset pairing brick sequences with
@@ -313,18 +320,20 @@
 
         <div class="py-4"></div>
         <h2 class="text-center fs-3 mb-4">Generated brick structures assembled by humans</h2>
-        <img srcset="images-optimized/human_exec-540.webp 540w,
-                     images-optimized/human_exec-1080.webp 1080w,
-                     images-optimized/human_exec-1320.webp 1320w,
-                     images-optimized/human_exec-2640.webp 2640w"
-             sizes="(max-width: 575px) 100vw,
-                    (max-width: 767px) 540px,
-                    (max-width: 991px) 720px,
-                    (max-width: 1199px) 960px,
-                    (max-width: 1399px) 1140px,
-                    1320px"
-             src="images-optimized/human_exec-540.webp" class="img-fluid" width="3287" height="3008"
-             alt="Examples of brick structures built in the real world by humans."/>
+        <a class="pswp-img" href="images-optimized/human_exec-full.webp" data-pswp-width="3287" data-pswp-height="3008" target="_blank">
+            <img srcset="images-optimized/human_exec-540.webp 540w,
+                        images-optimized/human_exec-1080.webp 1080w,
+                        images-optimized/human_exec-1320.webp 1320w,
+                        images-optimized/human_exec-2640.webp 2640w"
+                sizes="(max-width: 575px) 100vw,
+                        (max-width: 767px) 540px,
+                        (max-width: 991px) 720px,
+                        (max-width: 1199px) 960px,
+                        (max-width: 1399px) 1140px,
+                        1320px"
+                src="images-optimized/human_exec-540.webp" class="img-fluid" width="3287" height="3008"
+                alt="Examples of brick structures built in the real world by humans."/>
+        </a>
 
         <div class="py-4"></div>
         <h2 class="text-center fs-3 mb-4">Generated textured brick models</h2>
@@ -495,10 +504,21 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.2.0/dist/lazyload.min.js"></script>
 <script>
+    // LazyLoad
     const lazyLoadInstance = new LazyLoad({
         elements_selector: "video",
         use_native: true,
     });
+</script>
+<script type="module">
+    // PhotoSwipe
+    import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js'
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: "#pswp-gallery",
+        children: "a.pswp-img",
+        pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/+esm'),
+    });
+    lightbox.init();
 </script>
 </body>
 
