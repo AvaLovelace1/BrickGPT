@@ -6,15 +6,21 @@ readme = "README.md"
 authors = [
     { name = "Ava Pun", email = "apun@andrew.cmu.edu" }
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "bpy",
     "gurobipy",
     "numpy<2", # lower version of numpy needed for bpy
     "peft",
     "torch",
+    "torchaudio", 
+    "torchvision",
     "transformers",
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
 
 [project.optional-dependencies]
 finetuning = [
