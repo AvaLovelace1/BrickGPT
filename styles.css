@@ -35,3 +35,7 @@ h6 {
 .max-w-lg {
     max-width: 992px;
 }
+
+.text-balance {
+    text-wrap: balance;
+}
