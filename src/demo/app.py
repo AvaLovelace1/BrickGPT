@@ -9,6 +9,7 @@ from dataclasses import fields
 from pathlib import Path
 
 import gradio as gr
+import torch
 import transformers
 from brickgpt.models import BrickGPT, BrickGPTConfig
 
@@ -84,7 +85,14 @@ class BrickGenerator:
         self.save_data_dir = '/data/apun/brickgpt_demo_out'
         os.makedirs(self.save_data_dir, exist_ok=True)
 
-    def generate_bricks(
+    def generate_bricks(self, *args, **kwargs):
+        try:
+            return self._generate_bricks(*args, **kwargs)
+        except torch.OutOfMemoryError:
+            raise gr.Error('The model ran out of GPU memory. '
+                           'Try reducing the "Max bricks" or "Max regenerations" parameters, or choose a different seed.')
+
+    def _generate_bricks(
             self,
             prompt: str,
             do_not_save_data: bool,
