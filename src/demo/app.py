@@ -49,6 +49,8 @@ class Demo:
         self.flag_bad_btn = gr.Button('Rate as Bad 😞', size='md')
         self.flag_okay_btn = gr.Button('Rate as Okay 😐', size='md')
         self.flag_great_btn = gr.Button('Rate as Great 😄', size='md')
+        self.report_issue_btn = gr.Button('Report an issue', size='sm',
+                                          link='https://github.com/AvaLovelace1/BrickGPT/issues/new/choose')
 
         self.demo = gr.Blocks(theme=gr.themes.Monochrome())
 
@@ -59,8 +61,7 @@ class Demo:
                 'This is the official demo for **[BrickGPT](https://avalovelace1.github.io/BrickGPT/)**, the first approach for generating physically stable toy brick structures from text prompts.\n\n'
                 'BrickGPT is restricted to creating structures made of 1-unit-tall cuboid bricks on a 20x20x20 grid. It was trained on a dataset of 21 object categories: '
                 '*basket, bed, bench, birdhouse, bookshelf, bottle, bowl, bus, camera, car, chair, guitar, jar, mug, piano, pot, sofa, table, tower, train, vessel.* '
-                'Performance on prompts from outside these categories may be limited. This demo does not include texturing or coloring.\n\n'
-                'If you encounter any problems, [create an issue on GitHub](https://github.com/AvaLovelace1/BrickGPT/issues/new/choose).')
+                'Performance on prompts from outside these categories may be limited. This demo does not include texturing or coloring.')
 
             with gr.Row():
                 with gr.Column():
@@ -82,6 +83,7 @@ class Demo:
                         self.flag_bad_btn.render()
                         self.flag_okay_btn.render()
                         self.flag_great_btn.render()
+                    self.report_issue_btn.render()
 
             examples = get_examples()
             dummy_name = gr.Textbox(visible=False, label='Name')
