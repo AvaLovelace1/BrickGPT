@@ -41,7 +41,7 @@ class Demo:
         self.generate_btn = gr.Button('Generate!', variant='primary')
 
         # Outputs
-        self.out_img = gr.Image(label='Output image', format='png')
+        self.out_img = gr.Image(label='Rendered brick structure', format='png')
         self.out_txt = gr.Textbox(label='Output bricks', lines=5, max_lines=5, show_copy_button=True,
                                   info='The brick structure in text format. Each line of the form "hxw (x,y,z)" represents a '
                                        '1-unit-tall rectangular brick with dimensions hxw placed at coordinates (x,y,z).')
