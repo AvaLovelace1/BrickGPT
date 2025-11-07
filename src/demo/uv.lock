@@ -161,6 +161,7 @@ dependencies = [
     { name = "bpy" },
     { name = "brickgpt" },
     { name = "gradio" },
+    { name = "pillow" },
 ]
 
 [package.metadata]
@@ -168,6 +169,7 @@ requires-dist = [
     { name = "bpy" },
     { name = "brickgpt", git = "https://github.com/AvaLovelace1/BrickGPT.git" },
     { name = "gradio" },
+    { name = "pillow" },
 ]
 
 [[package]]

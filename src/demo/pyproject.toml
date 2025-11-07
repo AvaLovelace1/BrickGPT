@@ -8,6 +8,7 @@ dependencies = [
     "bpy",
     "brickgpt",
     "gradio",
+    "pillow",
 ]
 
 [tool.uv.sources]

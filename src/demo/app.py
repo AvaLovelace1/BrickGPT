@@ -11,13 +11,15 @@ from typing import Any
 import gradio as gr
 import torch
 import transformers
+from PIL import Image
 from brickgpt.models import BrickGPT, BrickGPTConfig
 
 
 class Demo:
-    def __init__(self, model_cfg: BrickGPTConfig, output_dir: str, flagging_dir: str):
+    def __init__(self, model_cfg: BrickGPTConfig, flagging_dir: str):
         self.flagging_dir = '/data/apun/brickgpt_demo_out'
-        self.generator = BrickGenerator(output_dir, flagging_dir, model_cfg)
+        os.makedirs(self.flagging_dir, exist_ok=True)
+        self.generator = BrickGenerator(flagging_dir, model_cfg)
 
         # Inputs
         self.in_prompt = gr.Textbox(label='Input prompt', info='Text prompt for which to generate a brick structure.',
@@ -170,10 +172,9 @@ def get_examples(example_dir: str = str(Path(__file__).parent / 'examples')) -> 
 
 
 class BrickGenerator:
-    def __init__(self, output_dir: str, flagging_dir: str, model_cfg: BrickGPTConfig):
-        self.output_dir = output_dir
+    def __init__(self, flagging_dir: str, model_cfg: BrickGPTConfig):
         self.flagging_dir = flagging_dir
-        os.makedirs(output_dir, exist_ok=True)
+        os.makedirs(self.flagging_dir, exist_ok=True)
         self.model_cfg = model_cfg
         self.model = None
 
@@ -197,7 +198,7 @@ class BrickGenerator:
             max_bricks: int | None,
             max_brick_rejections: int | None,
             max_regenerations: int | None,
-    ) -> tuple[str, str, dict[str, Any]]:
+    ) -> tuple[Image.Image, str, dict[str, Any]]:
         self.model = BrickGPT(self.model_cfg)
 
         # Set model parameters
@@ -211,23 +212,28 @@ class BrickGenerator:
         print(f'Generating bricks for prompt: "{prompt}"')
         start_time = time.time()
         output = self.model(prompt)
-
-        # Write output LDR to file
-        output_uuid = str(uuid.uuid4())
-        ldr_filename = os.path.join(self.output_dir, f'{output_uuid}.ldr')
-        with open(ldr_filename, 'w') as f:
-            f.write(output['bricks'].to_ldr())
         generation_time = time.time() - start_time
-        output_txt = output['bricks'].to_txt()
         print(f'Finished generation in {generation_time:.1f}s!')
 
-        # Render brick model to image
-        print('Rendering image...')
-        img_filename = os.path.join(self.output_dir, f'{output_uuid}.png')
-        subprocess.run(['python', self.render_bricks_script, '--in_file', ldr_filename, '--out_file', img_filename],
-                       check=True)  # Run render as a subprocess to prevent issues with Blender
-        rendering_time = time.time() - start_time - generation_time
-        print(f'Finished rendering in {rendering_time:.1f}s!')
+        output_uuid = str(uuid.uuid4())
+        output_txt = output['bricks'].to_txt()
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            # Write output LDR to tmp file
+            ldr_filename = os.path.join(tmp_dir, f'{output_uuid}.ldr')
+            with open(ldr_filename, 'w') as f:
+                f.write(output['bricks'].to_ldr())
+
+            # Render brick model to tmp image
+            print('Rendering image...')
+            img_filename = os.path.join(tmp_dir, f'{output_uuid}.png')
+            subprocess.run(['python', self.render_bricks_script, '--in_file', ldr_filename, '--out_file', img_filename],
+                           check=True)  # Run render as a subprocess to prevent issues with Blender
+            rendering_time = time.time() - start_time - generation_time
+            print(f'Finished rendering in {rendering_time:.1f}s!')
+
+            # Load image
+            img = Image.open(img_filename)
 
         flag_data = {
             'uid': output_uuid,
@@ -249,11 +255,10 @@ class BrickGenerator:
                 json.dump(flag_data, f)
             print(f'Saved data to {out_filename}.')
 
-        return img_filename, output_txt, flag_data
+        return img, output_txt, flag_data
 
 
-with tempfile.TemporaryDirectory() as tmp_dir:
-    my_demo = Demo(BrickGPTConfig(max_regenerations=5, device='cuda'),
-                   output_dir=tmp_dir, flagging_dir='/data/apun/brickgpt_demo_out')
-    demo = my_demo.demo  # __main__ needs a "demo" attribute for Gradio hot reloading to work
-    my_demo.launch()
+my_demo = Demo(BrickGPTConfig(max_regenerations=5, device='cuda'),
+               flagging_dir='/data/apun/brickgpt_demo_out')
+demo = my_demo.demo  # __main__ needs a "demo" attribute for Gradio hot reloading to work
+my_demo.launch()
