@@ -12,7 +12,7 @@ Carnegie Mellon University
 
 [![Paper](https://img.shields.io/badge/arXiv-2505.05469-b5212f.svg?logo=arxiv)](https://arxiv.org/abs/2505.05469)
 [![Project Page](https://img.shields.io/badge/Website-Project%20Page-0369a1?logo=googlechrome&logoColor=white)](https://avalovelace1.github.io/BrickGPT/)
-[![Demo](https://img.shields.io/badge/Hugging%20Face-Demo-FFD21E?logo=huggingface)](https://huggingface.co/spaces/cmu-gil/BrickGPT-Demo)
+[![Demo](https://img.shields.io/badge/Gradio-Demo-F97316?logo=gradio)](https://avalovelace1.github.io/BrickGPT/demo/)
 [![Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface)](https://huggingface.co/datasets/AvaLovelace/StableText2Brick)
 [![Licence](https://img.shields.io/github/license/AvaLovelace1/BrickGPT?color=15803d&label=%F0%9F%93%84%20License)](https://github.com/AvaLovelace1/BrickGPT/blob/main/LICENSE)
 
@@ -87,7 +87,13 @@ if using pip.
 
 ## Running inference interactively
 
-You can run inference with the fine-tuned BrickGPT model using:
+### Gradio demo
+
+**[A Gradio demo is available here.](https://avalovelace1.github.io/BrickGPT/demo/)** Its source code is provided in the subdirectory [src/demo](src/demo).
+
+### Command line interface (CLI)
+
+You can run BrickGPT inference through the command line with the following command:
 
 ```zsh
 uv run infer
@@ -99,7 +105,7 @@ The [model weights](https://huggingface.co/AvaLovelace/BrickGPT) will automatica
 If you wish to run inference with a different set of model weights, specify them using the `--model_name_or_path`
 option. See `uv run infer -h` for a full list of options.
 
-### Example interaction
+#### Example interaction
 
 Here is an example interaction using the `infer` script:
 
