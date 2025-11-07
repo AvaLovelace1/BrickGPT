@@ -1,0 +1,10 @@
+.gradio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh !important;
+}
+
+.fillable {
+    padding: 1rem 2rem;
+}
