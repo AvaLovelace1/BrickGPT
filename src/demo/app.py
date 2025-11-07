@@ -18,12 +18,12 @@ class Demo:
         self.generator = BrickGenerator(output_dir, model_cfg)
 
         # Define inputs and outputs
-        in_prompt = gr.Textbox(label='Prompt', info='Text prompt for which to generate a brick structure.',
+        in_prompt = gr.Textbox(label='Input prompt', info='Text prompt for which to generate a brick structure.',
                                max_length=2048)
         in_optout = gr.Checkbox(label='Do not save my data',
                                 info='We may collect inputs and outputs to help us improve the model. '
                                      'Your data will never be shared or used for any other purpose. '
-                                     'If you wish to opt out of data collection, please check this box.')
+                                     'If you wish to opt out of data collection, check this box.')
         in_temperature = gr.Slider(0.01, 2.0, value=model_cfg.temperature, step=0.01, precision=2,
                                    label='Temperature', info=get_help_string('temperature'))
         in_seed = gr.Number(value=42, label='Seed', info='Random seed for generation.',
@@ -42,10 +42,11 @@ class Demo:
         self.demo = gr.Interface(
             fn=self.generator.generate_bricks,
             title='BrickGPT Demo',
-            description='Official demo for [BrickGPT](https://avalovelace1.github.io/BrickGPT/), the first approach for generating physically stable toy brick models from text prompts.\n\n'
-                        'The model is restricted to creating structures made of 1-unit-tall cuboid bricks on a 20x20x20 grid. It was trained on a dataset of 21 object categories: '
+            description='This is the official demo for [BrickGPT](https://avalovelace1.github.io/BrickGPT/), the first approach for generating physically stable toy brick structures from text prompts.\n\n'
+                        'BrickGPT is restricted to creating structures made of 1-unit-tall cuboid bricks on a 20x20x20 grid. It was trained on a dataset of 21 object categories: '
                         '*basket, bed, bench, birdhouse, bookshelf, bottle, bowl, bus, camera, car, chair, guitar, jar, mug, piano, pot, sofa, table, tower, train, vessel.* '
-                        'Performance on prompts from outside these categories may be limited. This demo does not include texturing or coloring.',
+                        'Performance on prompts from outside these categories may be limited. This demo does not include texturing or coloring.\n\n'
+                        'If you encounter any problems, [create an issue on GitHub](https://github.com/AvaLovelace1/BrickGPT/issues/new/choose).',
             inputs=[in_prompt, in_optout],
             additional_inputs=[in_temperature, in_seed, in_bricks, in_rejections, in_regenerations],
             outputs=[out_img, out_txt],
