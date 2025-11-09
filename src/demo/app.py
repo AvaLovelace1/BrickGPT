@@ -5,6 +5,7 @@ import tempfile
 import time
 import uuid
 from dataclasses import fields
+from functools import cached_property
 from pathlib import Path
 from typing import Any
 
@@ -178,11 +179,14 @@ class BrickGenerator:
         self.flagging_dir = flagging_dir
         os.makedirs(self.flagging_dir, exist_ok=True)
         self.model_cfg = model_cfg
-        self.model = None
 
         self.render_bricks_script = str(Path(__file__).parent / 'render_bricks.py')
         self.save_data_dir = '/data/apun/brickgpt_demo_out'
         os.makedirs(self.save_data_dir, exist_ok=True)
+
+    @cached_property
+    def model(self) -> BrickGPT:
+        return BrickGPT(self.model_cfg)
 
     def generate_bricks(self, *args, **kwargs):
         try:
@@ -201,8 +205,6 @@ class BrickGenerator:
             max_brick_rejections: int | None,
             max_regenerations: int | None,
     ) -> tuple[Image.Image, str, dict[str, Any]]:
-        self.model = BrickGPT(self.model_cfg)
-
         # Set model parameters
         if temperature is not None: self.model.temperature = temperature
         if max_bricks is not None: self.model.max_bricks = max_bricks
