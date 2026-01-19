@@ -5,11 +5,30 @@ build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
 
 # Virtual environments
 .venv
+.env
 
+# IDEs
 .idea
-wandb
+.vscode/
 *.un~
 .DS_Store
+
+# Gurobi
+gurobi.lic
+gurobi.log
+
+# Data and Dependencies
+ldraw/
+objaverse/
+*.csv
+
+# Output Artifacts (LDraw/Results)
+!LICENSE
+
+# Logs and wandb
+wandb
+*.log
