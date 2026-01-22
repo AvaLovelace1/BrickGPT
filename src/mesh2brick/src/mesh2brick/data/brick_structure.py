@@ -203,23 +203,23 @@ class BrickStructure:
         return scores
 
     @classmethod
-    def from_json(cls, bricks_json: dict):
+    def from_json(cls, bricks_json: dict, world_dim: int = 20):
         bricks = [Brick.from_json(v) for k, v in bricks_json.items() if k.isdigit()]
-        return cls(bricks)
+        return cls(bricks, world_dim=world_dim)
 
     @classmethod
-    def from_txt(cls, bricks_txt: str):
+    def from_txt(cls, bricks_txt: str, world_dim: int = 20):
         bricks_txt = bricks_txt.split('\n')
         bricks_txt = [b for b in bricks_txt if b.strip()]  # Remove blank lines
         bricks = [Brick.from_txt(brick) for brick in bricks_txt]
-        return cls(bricks)
+        return cls(bricks, world_dim=world_dim)
 
     @classmethod
-    def from_ldr(cls, bricks_ldr: str):
+    def from_ldr(cls, bricks_ldr: str, world_dim: int = 20):
         bricks_ldr = bricks_ldr.split('0 STEP')  # Split on step lines
         bricks_ldr = [b for b in bricks_ldr if b.strip()]  # Remove blank or whitespace-only lines
         bricks = [Brick.from_ldr(brick) for brick in bricks_ldr]
-        return cls(bricks)
+        return cls(bricks, world_dim=world_dim)
 
 
 class ConnectivityBrickStructure:
@@ -285,7 +285,7 @@ class ConnectivityBrickStructure:
         return self._node2component
 
     def stability_score(self) -> np.ndarray:
-        bricks = BrickStructure(list(self.bricks.values()))
+        bricks = BrickStructure(list(self.bricks.values()), self.max_x)
         return bricks.stability_scores()
 
     def node_exists(self, node_id: int):
