@@ -23,7 +23,7 @@ gurobi.log
 
 # Data and Dependencies
 ldraw/
-objaverse/
+
 *.csv
 
 # Output Artifacts (LDraw/Results)
@@ -32,3 +32,5 @@ objaverse/
 # Logs and wandb
 wandb
 *.log
+objaverse/assets
+objaverse/gallery.html

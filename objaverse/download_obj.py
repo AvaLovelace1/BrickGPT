@@ -48,7 +48,8 @@ def download_objaverse_assets(csv_path: str, output_dir: str = "objaverse_assets
         print(f"Saved: {dest_path}")
 
 if __name__ == "__main__":
-    CSV_FILE = "../objaversepp_small.csv"
-    OUTPUT_DIRECTORY = "../src/mesh2brick/objaverse"
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    CSV_FILE = os.path.join(SCRIPT_DIR, "objaversepp_small.csv")
+    OUTPUT_DIRECTORY = os.path.join(SCRIPT_DIR, "assets")
     
     download_objaverse_assets(CSV_FILE, OUTPUT_DIRECTORY)
