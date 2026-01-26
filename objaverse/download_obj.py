@@ -24,11 +24,7 @@ def download_objaverse_assets(csv_path: str, output_dir: str = "objaverse_assets
         os.makedirs(output_dir)
         print(f"Created directory: {output_dir}")
     
-    """
-    Use multiprocessing to download in parallel (handled by objaverse library)
-    objaverse.load_objects will download the objects to the ~/.objaverse cache 
-    and return a map of {uid: file_path}
-    """
+    # Use multiprocessing to download in parallel
     objects = objaverse.load_objects(
         uids=uids,
         download_processes=multiprocessing.cpu_count()

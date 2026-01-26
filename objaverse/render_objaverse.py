@@ -8,16 +8,15 @@ import argparse
 SCRIPT_DIR = Path(__file__).parent.resolve()
 ASSETS_DIR = SCRIPT_DIR / "assets"
 
+"""
+Scans assets directory for .ldr files and renders them to .png if the png doesn't exist
+"""
 def render_assets(force_all=False):
-    """
-    Scans assets directory for .ldr files (including in subfolders)
-    and renders them to .png if the png doesn't exist (or if force_all is True).
-    """
     if not ASSETS_DIR.exists():
         print(f"Error: assets directory not found at {ASSETS_DIR}")
         return
 
-    # Find all .ldr files recursively
+    # Find all .ldr files
     ldr_files = sorted(list(ASSETS_DIR.rglob("*.ldr")))
     print(f"Found {len(ldr_files)} LDR files to check for rendering.")
 
@@ -46,7 +45,6 @@ def render_assets(force_all=False):
         ]
         
         try:
-            # Run from project root (parent of objaverse dir)
             subprocess.run(cmd, check=True, cwd=SCRIPT_DIR.parent, env=env, stdout=subprocess.DEVNULL)
             print(f"  -> Success")
             count += 1
