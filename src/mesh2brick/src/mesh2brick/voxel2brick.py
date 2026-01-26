@@ -319,4 +319,4 @@ def voxel2brick(voxels: np.ndarray, **kwargs) -> BrickStructure:
         bricks_by_layer[brick.z].append(brick)
 
     directed_brick_graph = plan_robotic_operation(bricks_by_layer)
-    return BrickStructure.from_json(directed_brick_graph)
+    return BrickStructure.from_json(directed_brick_graph, world_dim=voxels.shape[0])
