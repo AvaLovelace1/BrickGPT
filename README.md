@@ -1,7 +1,7 @@
 # BrickGPT
 
 ***Generating Physically Stable and Buildable Brick Structures from Text***  
-**ICCV 2025**  
+-**ICCV 2025 (Oral, Best Paper, Marr Prize)**
 [Ava Pun*](https://avapun.com/),
 [Kangle Deng*](https://dunbar12138.github.io/),
 [Ruixuan Liu*](https://waynekyrie.github.io/),

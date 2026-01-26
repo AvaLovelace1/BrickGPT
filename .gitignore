@@ -13,6 +13,7 @@ wheels/
 
 # IDEs
 .idea
+-wandb
 .vscode/
 *.un~
 .DS_Store
