@@ -42,7 +42,7 @@ def convert_objaverse_assets(resolution: int):
             ldr_content = bricks.to_ldr()
             with open(ldr_output_path, "w") as f:
                 f.write(ldr_content)
-            
+                
                 
             print(f"Saved to {res_dir.name}/{ldr_output_path.name}")
         except Exception as e:
