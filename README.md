@@ -1,3 +1,6 @@
+> [!note]
+> *[October 2026]* Check out our new work! **[BrickWright: Agentic Creation of Physically Feasible Brick Builds](https://avalovelace1.github.io/brickwright/)**
+
 # BrickGPT
 
 ***Generating Physically Stable and Buildable Brick Structures from Text***  
