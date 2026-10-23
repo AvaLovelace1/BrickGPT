@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 60" role="img">
+  <title>BrickWright</title>
+  <g transform="translate(4.971,4.971)">
+    <rect
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+      rx="2"
+      fill="#36aebf"
+      transform="rotate(45 12 12)"
+    />
+    <circle cx="12" cy="12" r="6" fill="#73cbd7" />
+    <rect
+      x="26"
+      y="26"
+      width="24"
+      height="24"
+      rx="2"
+      fill="#36aebf"
+      transform="rotate(45 38 38)"
+    />
+    <circle cx="38" cy="38" r="6" fill="#73cbd7" />
+    <rect
+      x="52"
+      y="0"
+      width="24"
+      height="24"
+      rx="2"
+      fill="#36aebf"
+      transform="rotate(45 64 12)"
+    />
+    <circle cx="64" cy="12" r="6" fill="#73cbd7" />
+    <rect x="0" y="26" width="24" height="24" rx="2" fill="#fe8a18" />
+    <circle cx="12" cy="38" r="6" fill="#febb79" />
+    <rect x="26" y="0" width="24" height="24" rx="2" fill="#fe8a18" />
+    <circle cx="38" cy="12" r="6" fill="#febb79" />
+    <rect x="52" y="26" width="24" height="24" rx="2" fill="#fe8a18" />
+    <circle cx="64" cy="38" r="6" fill="#febb79" />
+  </g>
+</svg>

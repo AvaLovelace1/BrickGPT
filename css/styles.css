@@ -39,3 +39,103 @@ h6 {
 .text-balance {
     text-wrap: balance;
 }
+
+/* BrickWright banner */
+.bw-banner {
+    --bb-paper: #f9f7f1;
+    --bb-ink: #1b2a34;
+    --bb-ink-deep: #10191f;
+    --bb-orange: #fe8a18;
+    --bb-orange-deep: #a65301;
+    --bb-brick-depth: 4px;
+    --bb-brick-depth-hover: 6px;
+    isolation: isolate;
+    font-family: "Source Sans 3", sans-serif;
+    color: var(--bb-ink);
+    background-color: var(--bb-paper);
+    background-image: radial-gradient(color-mix(in srgb, var(--bb-ink) 15%, transparent) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border-bottom: 2px solid var(--bb-ink);
+}
+
+.bw-banner-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.125em;
+    font-family: "Rokkitt", serif;
+    font-weight: 800;
+}
+
+.bw-banner-logo img {
+    height: 0.875em;
+    margin-bottom: 0.125em;
+}
+
+.bw-banner-logo span {
+    align-self: baseline;
+}
+
+.bw-banner-btn {
+    --brick-depth: var(--bb-brick-depth);
+    position: relative;
+    top: calc(-1 * var(--brick-depth));
+    left: calc(-1 * var(--brick-depth));
+    display: inline-block;
+    font-weight: 600;
+    color: var(--bb-ink-deep);
+    background: var(--bb-orange);
+    padding: 0.375rem 1rem;
+    border: 2px solid var(--bb-ink);
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: top 0.08s ease-out, left 0.08s ease-out;
+}
+
+.bw-banner-btn::before,
+.bw-banner-btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--bb-orange-deep);
+    transform-origin: top left;
+    transition: width 0.08s ease-out, height 0.08s ease-out;
+}
+
+.bw-banner-btn::before {
+    left: -2px;
+    top: 100%;
+    width: calc(100% + 2px);
+    height: var(--brick-depth);
+    transform: skewX(45deg);
+}
+
+.bw-banner-btn::after {
+    left: 100%;
+    top: -2px;
+    width: var(--brick-depth);
+    height: calc(100% + 2px);
+    transform: skewY(45deg);
+}
+
+.bw-banner-btn:hover {
+    --brick-depth: var(--bb-brick-depth-hover);
+    color: var(--bb-ink-deep);
+}
+
+.bw-banner-btn:active {
+    --brick-depth: 0px;
+}
+
+.bw-banner-btn:focus-visible {
+    outline: 3px solid var(--bb-ink);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bw-banner-btn,
+    .bw-banner-btn::before,
+    .bw-banner-btn::after {
+        transition: none;
+    }
+}
