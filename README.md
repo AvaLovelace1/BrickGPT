@@ -88,6 +88,25 @@ pip install "https://github.com/AvaLovelace1/BrickGPT.git"
 
 if using pip.
 
+### Running on Intel GPUs (XPU)
+
+BrickGPT inference also runs on Intel GPUs (Intel Arc and Intel Core Ultra integrated graphics) with the XPU build of
+PyTorch. First install the prerequisites and clone the repo as above. Then, instead of `uv sync`, create a Python 3.11
+environment, install PyTorch for XPU, and install this repo on top of it (with the `transformers`, `peft` and `bpy`
+versions from `uv.lock`):
+
+```zsh
+uv venv --python 3.11 && source .venv/bin/activate
+uv pip install torch --index-url https://download.pytorch.org/whl/xpu
+uv pip install -e . "transformers==4.51.3" "peft==0.15.2" "bpy==4.4.0"
+infer --device xpu
+```
+
+With the default `--device auto`, the device is set to `xpu` when an Intel GPU is available and CUDA is not.
+PyTorch for XPU and `bpy` each ship their own SYCL runtime and cannot be loaded in the same process, so with an XPU build
+of PyTorch, `infer` renders the output image in a separate process. Stability analysis (Gurobi) is unchanged, and the
+Gradio demo in [src/demo](src/demo) still runs on `cuda`.
+
 ## Running inference interactively
 
 ### Gradio demo

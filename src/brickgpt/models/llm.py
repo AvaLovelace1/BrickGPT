@@ -5,15 +5,26 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.cache_utils import DynamicCache
 
 
+def get_default_device() -> str:
+    """
+    Returns "cuda" if available, otherwise "xpu" (Intel GPU) if available, otherwise "cpu".
+    """
+    if torch.cuda.is_available():
+        return 'cuda'
+    if hasattr(torch, 'xpu') and torch.xpu.is_available():
+        return 'xpu'
+    return 'cpu'
+
+
 class LLM:
     """
     A small wrapper class for a language model.
     """
 
-    def __init__(self, model_name: str, device: str = 'cuda' if torch.cuda.is_available() else 'cpu'):
-        self.device = device
+    def __init__(self, model_name: str, device: str | None = None):
+        self.device = device if device is not None else get_default_device()
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
+        self.model = AutoModelForCausalLM.from_pretrained(model_name).to(self.device)
 
         self.kv_cache = None
         self.kv_cache_saved = None

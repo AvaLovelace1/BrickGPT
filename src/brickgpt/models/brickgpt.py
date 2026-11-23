@@ -12,7 +12,7 @@ import torch
 from transformers.generation.logits_process import PrefixConstrainedLogitsProcessor, LogitsProcessorList
 
 from brickgpt.data import max_brick_dimension, BrickStructure, Brick
-from .llm import LLM
+from .llm import LLM, get_default_device
 
 logger = logging.getLogger(__name__)
 
@@ -94,11 +94,12 @@ class BrickGPTConfig:
         kw_only=True,
         metadata={'help': 'The format of the brick-structure-generating instruction to give to the LLM.'},
     )
-    device: Literal['auto', 'cuda', 'mps', 'cpu'] = field(
+    device: Literal['auto', 'cuda', 'mps', 'xpu', 'cpu'] = field(
         default='auto',
         kw_only=True,
         metadata={'help': 'The device to use for inference. '
-                          'If "auto", will be set to "cuda" if available, otherwise "mps" if available, otherwise "cpu".'},
+                          'If "auto", will be set to "cuda" if available, otherwise "mps" if available, '
+                          'otherwise "xpu" (Intel GPU) if available, otherwise "cpu".'},
     )
 
 
@@ -106,7 +107,7 @@ def get_device() -> str:
     if torch.backends.mps.is_available() and torch.backends.mps.is_built():
         return 'mps'  # Apple Silicon
     else:
-        return 'cuda' if torch.cuda.is_available() else 'cpu'
+        return get_default_device()
 
 
 class BrickGPT:
