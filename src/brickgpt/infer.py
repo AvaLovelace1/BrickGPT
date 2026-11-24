@@ -1,11 +1,19 @@
 import os
+import subprocess
+import sys
 import time
 
+import torch
 import transformers
 from transformers import HfArgumentParser
 
 from brickgpt.models import BrickGPT, BrickGPTConfig
-from brickgpt.render_bricks import render_bricks
+
+# PyTorch for Intel GPUs (XPU) and bpy each ship their own SYCL runtime, and the two cannot be loaded in the same
+# process. With an XPU build of PyTorch, images are rendered in a separate process instead.
+RENDER_IN_SUBPROCESS = getattr(torch.version, 'xpu', None) is not None
+if not RENDER_IN_SUBPROCESS:
+    from brickgpt.render_bricks import render_bricks
 
 
 def main():
@@ -44,7 +52,11 @@ def main():
             f.write(output['bricks'].to_txt())
         with open(ldr_filename, 'w') as f:
             f.write(output['bricks'].to_ldr())
-        render_bricks(ldr_filename, img_filename)
+        if RENDER_IN_SUBPROCESS:
+            subprocess.run([sys.executable, '-m', 'brickgpt.render_bricks',
+                            '--in_file', ldr_filename, '--out_file', img_filename], check=True)
+        else:
+            render_bricks(ldr_filename, img_filename)
 
         # Print results
         print('--------------------')
