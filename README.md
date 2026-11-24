@@ -90,8 +90,11 @@ if using pip.
 
 ### Running on Intel GPUs (XPU)
 
-BrickGPT inference also runs on Intel GPUs (Intel Arc and Intel Core Ultra integrated graphics) with the XPU build of
-PyTorch. First install the prerequisites and clone the repo as above. Then, instead of `uv sync`, create a Python 3.11
+BrickGPT inference also runs on Intel GPUs with the XPU build of PyTorch, such as Intel® Arc™ A-Series Graphics,
+Intel® Arc™ B-Series Graphics and Intel® Core™ Ultra Processors with Intel® Arc™ Graphics (see PyTorch's
+[supported Intel GPUs](https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html)).
+It was tested on the Intel® Arc™ B390 GPU of an Intel® Core™ Ultra X7 Processor 358H.
+First install the prerequisites and clone the repo as above. Then, instead of `uv sync`, create a Python 3.11
 environment, install PyTorch for XPU, and install this repo on top of it (with the `transformers`, `peft` and `bpy`
 versions from `uv.lock`):
 
